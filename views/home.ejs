@@ -10,21 +10,6 @@
   </head>
 
   <body>
-    <!-- <nav class="navbar">
-        <div class="logo">
-          <img src="../assets/images/logo.png" alt="Alumni Connect Logo" />
-        </div>
-        <ul class="nav-links">
-          <li><a href="./home">Home</a></li>
-          <li><a href="./home/about">About Us</a></li>
-          <li><a href="./home/networkinghub">Community Forum</a></li>
-          <li><a href="./home/event">Events</a></li>
-          <li><a href="./home/donations">Donations</a></li>
-          <li><a href="./home/job">Job</a></li>
-        </ul>
-        <button class="sign-in-btn">Sign In</button>
-      </nav> -->
-
     <%- include("partials/navbar.ejs") %>
 
     <header>
@@ -41,36 +26,15 @@
       <section class="events">
         <h2>Upcoming Events</h2>
         <div class="event-cards">
+          <% i=0; %> <% for(event of event_data){ %> <%if(i==3) break; %>
           <div class="card">
-            <img src="../assets/images/techConference.jpg" alt="" />
-            <h3>Tech Conference</h3>
-            <p>Date: November 20, 2023</p>
-            <p>
-              Join us for a panel discussion on technology and innovation with
-              industry leaders.
-            </p>
-            <a href="/temp" class="register-button">Learn More</a>
-          </div>
-          <div class="card">
-            <img src="../assets/images/winterfestival.jpg" alt="" />
-            <h3>Winter Festival</h3>
-            <p>Date: December 8, 2023</p>
-            <p>
-              Celebrate our annual winter festival with food, games, and live
-              music.
-            </p>
-            <a href="/temp" class="register-button">Learn More</a>
-          </div>
-          <div class="card">
-            <img src="../assets/images/SustainabilityLecture.jpg" alt="" />
-            <h3>Sustainability Lecture</h3>
-            <p>Date: January 15, 2024</p>
-            <p>
-              Attend our keynote lecture on sustainable development in urban
-              areas.
-            </p>
+            <img src="<%=event.image%>" alt="" />
+            <h3><%=event.title %></h3>
+            <p>Date:<%= event.date %>,Time:<%= event.time %></p>
+            <p>location:<%= event.location %></p>
             <a href="/home/temp" class="register-button">Learn More</a>
           </div>
+          <% i++; %> <% } %>
         </div>
       </section>
 
@@ -128,70 +92,17 @@
       <section class="jobs">
         <h2>Recent Jobs Posted</h2>
         <div class="job-cards">
+          <% i=0; %> <% for(job of job_data){ %> <%if(i==3) break; %>
           <div class="card">
-            <img src="./software.jpg" alt="" />
-            <h3>Software Engineer</h3>
-            <p>San Francisco, CA - Posted on Oct 15</p>
+            <img src="<%= job.image %>" alt="" />
+            <h3><%= job.company %></h3>
+            <p><%= job.title%></p>
+            <p><%= job.location %></p>
           </div>
-          <div class="card">
-            <img src="../assets/images/dataanalayst.jpg" alt="" />
-            <h3>Data Analyst</h3>
-            <p>New York, NY - Posted on Oct 18</p>
-          </div>
-          <div class="card">
-            <img src="../assets/images/projectmanagement.jpg" alt="" />
-            <h3>Project Manager</h3>
-            <p>Austin, TX - Posted on Oct 20</p>
-          </div>
+          <% i++; %> <% } %>
         </div>
       </section>
     </main>
-
-    <!-- <footer class="footer">
-      <div class="newsletter">
-        <p>Subscribe to our newsletter</p>
-        <div class="newsletter-input">
-          <input type="email" placeholder="Input your email" />
-          <button>Subscribe</button>
-        </div>
-      </div>
-
-      <div class="footer-content">
-        <div class="footer-logo">
-          <img
-            src="../assets/images/logo_afterLogIn.png"
-            alt="AlumniConnect Logo"
-          />
-        </div>
-        <ul class="footer-links">
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">Contact us</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-bottom">
-        <div class="language">
-          <select>
-            <option value="en">English</option>
-            <option value="es">Español</option>
-          </select>
-        </div>
-        <div class="copyright">
-          <p>© 2024 Brand, Inc.</p>
-        </div>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-    </footer> -->
 
     <%- include("partials/footer.ejs") %>
   </body>

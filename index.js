@@ -128,27 +128,27 @@ app.post("/signup", wrapAsync(async (req, res) => {
 }));
 
 //about
-app.get("/home/about", (req, res) => {
+app.get("/about", (req, res) => {
     res.render("about.ejs");
 })
 
 //netoworking hub
-app.get("/home/networkinghub", (req, res) => {
+app.get("/networkinghub", (req, res) => {
     res.render("networkinghub.ejs");
 })
 
 //events
-app.get("/home/event", (req, res) => {
+app.get("/event", (req, res) => {
     res.redirect("/events")
 })
 
 //donation
-app.get("/home/donations", isLogin, (req, res) => {
+app.get("/donations", isLogin, (req, res) => {
     res.render("donation");
 })
 
 //job
-app.get("/home/job", (req, res) => {
+app.get("/job", (req, res) => {
     job.find({})
         .then((job_data) => {
             res.render("job.ejs", { job_data });
@@ -457,7 +457,7 @@ app.get("/user/forum", (req, res) => {
 })
 
 //temperary
-app.get("/home/temp", isLogin, (req, res) => {
+app.get("/temp", isLogin, (req, res) => {
     res.render("/temp")
 })
 

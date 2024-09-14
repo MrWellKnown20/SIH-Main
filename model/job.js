@@ -1,10 +1,5 @@
 const mongoose = require("mongoose");
 
-async function connectdb() {
-    await mongoose.connect("mongodb://localhost:27017/AlumniConnect")
-}
-connectdb();
-
 const job_Schema = mongoose.Schema({
     title: {
         type: String,
@@ -14,6 +9,11 @@ const job_Schema = mongoose.Schema({
     },
     location: {
         type: String,
+    },
+    image: {
+        type: String,
+        default: "https://www.scodetechnologies.in/content-images/6217amdocs.jpg",
+        set: (v) => v === "" ? "https://www.scodetechnologies.in/content-images/6217amdocs.jpg" : v
     },
     description: {
         type: String,
