@@ -33,110 +33,33 @@
 
           <!-- Job Listings -->
           <div class="row">
+            <% for(let job of allJobs) { %>
             <div class="col-md-4">
               <div class="card mb-4">
                 <img
-                  src="../assets/images/graphicdesgn.jpg"
+                  src="<%= job.image %>"
                   class="card-img-top"
                   alt="Financial Analyst"
                 />
                 <div class="card-body">
-                  <h5 class="card-title">Financial Analyst</h5>
-                  <p class="card-text">
-                    Financial Advisory Experts<br />Chicago, IL
-                  </p>
-                  <a href="/admin/jobedit" class="btn btn-outline-primary"
+                  <h5 class="card-title"><%= job.title %></h5>
+                  <p class="card-text"><%= job.company %></p>
+                  <p class="card-text"><%= job.location %></p>
+                  <a
+                    href="/alumni/jobedit/<%= job._id %>"
+                    class="btn btn-outline-primary"
                     >Edit</a
                   >
+                  <form
+                    method="POST"
+                    action="/alumniJobDelete/<%= job._id %>?_method=DELETE"
+                  >
+                    <button class="btn btn-outline-primary">Delete</button>
+                  </form>
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img
-                  src="../assets/images/graphicdesgn.jpg"
-                  class="card-img-top"
-                  alt="Project Manager"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Project Manager</h5>
-                  <p class="card-text">Green Solutions Inc.<br />Austin, TX</p>
-                  <a href="/admin/jobedit" class="btn btn-outline-primary"
-                    >Edit</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img
-                  src="../assets/images/graphicdesgn.jpg"
-                  class="card-img-top"
-                  alt="Graphic Designer"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Graphic Designer</h5>
-                  <p class="card-text">Creative Media LLC.<br />New York, NY</p>
-                  <a href="/admin/jobedit" class="btn btn-outline-primary"
-                    >Edit</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img
-                  src="../assets/images/graphicdesgn.jpg"
-                  class="card-img-top"
-                  alt="Supply Chain Manager"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Supply Chain Manager</h5>
-                  <p class="card-text">Global Logistics<br />Seattle, WA</p>
-                  <a href="/admin/jobedit" class="btn btn-outline-primary"
-                    >Edit</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img
-                  src="../assets/images/graphicdesgn.jpg"
-                  class="card-img-top"
-                  alt="Software Engineer"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Software Engineer</h5>
-                  <p class="card-text">
-                    Tech Innovations Corp.<br />San Francisco, CA
-                  </p>
-                  <a href="/admin/jobedit" class="btn btn-outline-primary"
-                    >Edit</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img
-                  src="../assets/images/graphicdesgn.jpg"
-                  class="card-img-top"
-                  alt="Nurse Practitioner"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Nurse Practitioner</h5>
-                  <p class="card-text">
-                    HealthCare Partners<br />Los Angeles, CA
-                  </p>
-                  <a href="/admin/jobedit" class="btn btn-outline-primary"
-                    >Edit</a
-                  >
-                </div>
-              </div>
-            </div>
+            <% } %>
           </div>
         </main>
       </div>

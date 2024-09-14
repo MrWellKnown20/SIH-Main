@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alumni Connect - Dashboard</title>
-    <link rel="stylesheet" href="/AdminDashboard.css" />
-    <link rel="stylesheet" href="/sidebar.css" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -14,6 +16,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link rel="stylesheet" href="/AdminDashboard.css" />
+    <link rel="stylesheet" href="/sidebar.css" />
   </head>
   <body>
     <div class="dashboard-container">
@@ -78,11 +82,19 @@
                 <p><%= job.company %></p>
                 <p><%= job.location %></p>
                 <a href="#" class="event-link"> </a>
+                <div class="star">
+                  <a class="btn btn-outline-primary" href="/admin/job">
+                    Job listings</a
+                  >
+
+                  <a
+                    class="btn btn-outline-primary"
+                    href="/fetchApply/<%= job.title %>"
+                  >
+                    View Applicants
+                  </a>
+                </div>
               </div>
-              <a href="/admin/job"> <button>Job listings</button></a>
-              <a href="/fetchApply/<%= job.title %>">
-                <button>View Appliance</button></a
-              >
             </div>
             <% } %>
           </div>

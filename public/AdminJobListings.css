@@ -18,3 +18,9 @@ body {
 h2 {
     margin-top: 20px;
 }
+
+.star {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}

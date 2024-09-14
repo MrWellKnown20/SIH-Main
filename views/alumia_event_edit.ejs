@@ -1,172 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit Event Details</title>
-    <link rel="stylesheet" href="/assets/edit_event.css">
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
 
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/sidebar.css" />
+    <link rel="stylesheet" href="/admin_event_edit.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <%- include("partials/sidebar.ejs") %>
 
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
-        }
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card mt-5">
+              <div class="card-header">
+                <h3>Edit Event Details</h3>
+              </div>
+              <div class="card-body">
+                <div class="event-image text-center mb-4">
+                  <img
+                    src="<%= data.image %>"
+                    alt="Event Image"
+                    class="img-fluid"
+                  />
+                </div>
+                <form
+                  action="/Admin/event/<%= data.title %>+apply_form/update-event"
+                  method="POST"
+                >
+                  <input
+                    type="hidden"
+                    id="image"
+                    name="image"
+                    value="<%= data.image %>"
+                  />
+                  <input
+                    type="hidden"
+                    id="title"
+                    name="title"
+                    value="<%= data.title %>"
+                  />
 
-        main {
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 80vh;
-        }
-
-        .event-details {
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 900px;
-        }
-
-        .event-image img {
-            width: 100%;
-            height: auto;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .event-info {
-            padding: 20px;
-            flex: 1 1 50%;
-        }
-
-        .event-info label {
-            font-weight: bold;
-            color: #333;
-            margin-top: 10px;
-            display: block;
-        }
-
-        .event-info input,
-        .event-info textarea {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0 15px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .event-info input[type="submit"] {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .event-info input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .event-details {
-                flex-direction: column;
-            }
-
-            .event-image img {
-                border-bottom: none;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .event-title {
-                font-size: 20px;
-            }
-
-            .event-info input,
-            .event-info textarea {
-                font-size: 14px;
-            }
-
-            .event-info input[type="submit"] {
-                width: 100%;
-                font-size: 18px;
-            }
-        }
-
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Edit Event Details</h1>
-    </header>
-
-    <main>
-        <section class="event-details">
-            <div class="event-image">
-                <img src="<%= data.image %>" alt="Event Image">
-            </div>
-            <div class="event-info">
-                <form action="/Admin/event/<%= data.title %>+apply_form/update-event" method="POST">
-                    <input type="text" style="display: none;" id="image" name="image" value="<%= data.image %>">
-                    <input type="text" style="display: none;" id="title" name="title" value="<%= data.title %>">
-
-                    <h1><%= data.title %></h1>
+                  <div class="form-group">
                     <label for="description">Description:</label>
-                    <textarea id="description" name="description" rows="4"><%= data.description %></textarea>
+                    <textarea
+                      id="description"
+                      name="description"
+                      rows="4"
+                      class="form-control"
+                    >
+<%= data.description %></textarea
+                    >
+                  </div>
 
+                  <div class="form-group">
                     <label for="date">Date:</label>
-                    <input type="text" id="date" name="date" value="<%= data.date%>">
+                    <input
+                      type="text"
+                      id="date"
+                      name="date"
+                      value="<%= data.date %>"
+                      class="form-control"
+                    />
+                  </div>
 
+                  <div class="form-group">
                     <label for="time">Time:</label>
-                    <input type="text" id="time" name="time" value="<%= data.time %>">
+                    <input
+                      type="text"
+                      id="time"
+                      name="time"
+                      value="<%= data.time %>"
+                      class="form-control"
+                    />
+                  </div>
 
+                  <div class="form-group">
                     <label for="location">Location:</label>
-                    <input type="text" id="location" name="location" value="<%= data.location %>">
+                    <input
+                      type="text"
+                      id="location"
+                      name="location"
+                      value="<%= data.location %>"
+                      class="form-control"
+                    />
+                  </div>
 
+                  <div class="form-group">
                     <label for="organizer">Organizer:</label>
-                    <input type="text" id="organizer" name="organizer" value="<%= data.organizer %>">
+                    <input
+                      type="text"
+                      id="organizer"
+                      name="organizer"
+                      value="<%= data.organizer %>"
+                      class="form-control"
+                    />
+                  </div>
 
+                  <div class="form-group">
                     <label for="eventType">Type:</label>
-                    <input type="text" id="eventType" name="eventType" value="<%= data.EventType %>">
+                    <input
+                      type="text"
+                      id="eventType"
+                      name="eventType"
+                      value="<%= data.EventType %>"
+                      class="form-control"
+                    />
+                  </div>
 
+                  <div class="form-group">
                     <label for="contact">Contact Email:</label>
-                    <input type="email" id="contact" name="contact" value="<%= data.ContactEmail %>">
+                    <input
+                      type="email"
+                      id="contact"
+                      name="contact"
+                      value="<%= data.ContactEmail %>"
+                      class="form-control"
+                    />
+                  </div>
 
+                  <div class="form-group">
                     <label for="website">Website:</label>
-                    <input type="url" id="website" name="website" value="<%= data.Website %>">
+                    <input
+                      type="url"
+                      id="website"
+                      name="website"
+                      value="<%= data.Website %>"
+                      class="form-control"
+                    />
+                  </div>
 
+                  <div class="form-group">
                     <label for="status">Status:</label>
-                    <input type="text" id="status" name="status" value="<%= data.Status %>">
+                    <input
+                      type="text"
+                      id="status"
+                      name="status"
+                      value="<%= data.Status %>"
+                      class="form-control"
+                    />
+                  </div>
 
-                    <input type="submit" value="Save Changes">
+                  <button type="submit" class="btn btn-primary">
+                    Save Changes
+                  </button>
                 </form>
+              </div>
             </div>
-        </section>
-    </main>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer>
-        <p>&copy; 2024 AlumniConnect</p>
+      <p>&copy; 2024 AlumniConnect</p>
     </footer>
-</body>
+  </body>
 </html>

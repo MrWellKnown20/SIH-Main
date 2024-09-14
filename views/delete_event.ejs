@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alumni Connect - Event Management</title>
-    <link rel="stylesheet" href="/eventmanagement.css" />
-    <link rel="stylesheet" href="/adminDashboard.css"/>
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -14,87 +12,37 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        #pop_up_box{
-            position: fixed;
-            top: 0px;
-            left: 0px;
-            right: 0px;
-            bottom: 0px;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(85, 81, 81, 0.527);
-            height: 100vh;
-            display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  /* Light blue background for a modern look */
-    margin: 0;
-        }
-    </style>
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/eventmanagement.css" />
+    <link rel="stylesheet" href="/adminDashboard.css" />
+    <link rel="stylesheet" href="/delete_event.css" />
+    <link rel="stylesheet" href="/sidebar.css" />
+  </head>
   <body>
     <div id="pop_up_box">
-        <div style="padding: 20px;">
-            <div style="background-color: #ffffff; padding: 40px 30px; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); text-align: center; max-width: 350px; width: 90%; border: 1px solid #e4e4e4;">
-                <h1 style="margin-bottom: 30px; font-size: 28px; color: #1a202c; letter-spacing: 1px;"><%= name %></h1>
-                <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px; flex-wrap: wrap;">
-                 
-                  <a href="/admin/event"><button  style="padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; background-color: #3b82f6; color: white; transition: transform 0.2s ease, box-shadow 0.2s ease; margin-bottom: 10px; flex: 1;">Back</button>
-                   </a>  
-                   <form action="/admin/events/<%= name %>/final">
-                    <button style="padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; background-color: #ef4444; color: white; transition: transform 0.2s ease, box-shadow 0.2s ease; margin-bottom: 10px; flex: 1;">Delete</button>
-                    </form>
-                  </div>
-            </div>
+      <div class="pop_up_content">
+        <div class="pop_up_inner">
+          <h1 class="event_name"><%= name %></h1>
+          <div class="pop_up_buttons">
+            <a href="/admin/event">
+              <button class="pop_up_button back_button">Back</button>
+            </a>
+            <form action="/admin/events/<%= name %>/final">
+              <button class="pop_up_button delete_button">Delete</button>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
+
     <div class="dashboard-container">
-      <aside class="sidebar">
-        <div>
-        <div class="sidebar-header">
-          <div class="logo">
-            <img src="" alt="Alumni Connect Logo" />
-          </div>
-        </div>
-        <nav class="sidebar-nav">
-          <ul>
-            <li>
-              <a href="./AdminDashboard.html" class="active"
-                ><i class="fas fa-tachometer-alt"></i> Dashboard</a
-              >
-            </li>
-            <li>
-              <a href=""><i class="fas fa-users"></i> Alumni</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-briefcase"></i> Jobs</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-comments"></i> Forum</a>
-            </li>
-            <li>
-              <a href="./eventManagement.html"
-                ><i class="fas fa-calendar-alt"></i> Events</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="sidebar-footer">
-        <div class="user-info">
-          <img src="../assets/images/profilephoto.jpg" alt="User" />
-          <div style="position: relative;top: 5px;">
-            <div>Amanda</div>
-            <a style="position: relative; bottom: 10px; opacity: 0.6;" href="#" class="view-profile">View profile</a>
-          </div>
-        </div>
-        
-      </div>
-        </aside>
-      </aside>
+      <%- include("partials/sidebar.ejs") %>
 
       <main class="main-content">
         <header class="main-header">
@@ -104,21 +52,32 @@
             including title, date, time, and location.
           </p>
           <form action="/admin/event/new" method="get">
-          <button class="new-event-btn">+ New</button></form>
+            <button class="new-event-btn">+ New</button>
+          </form>
         </header>
 
         <section class="events-grid">
           <% for(data of result){ %>
           <div class="event-card">
-            <img src="<%= data.image %>" alt="Tech Symposium" />
+            <img src="<%= data.image %>" alt="Event Image" />
             <div class="event-info">
               <h3><%= data.title %></h3>
-              <p>Date:  <%= data.date %></p>
+              <p>Date: <%= data.date %></p>
               <p><%= data.time %> , <%= data.location %></p>
-              <a href="/alumni/event/<%= data.title %>/edit" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i>Edit</a>
-              <a href="/alumni/event/<%= data.title %>" class="edit-btn"><i class="fa-solid fa-street-view"></i>View details</a>
-              <a href="/admin/event/<%= data.title %>/application" class="edit-btn"><i class="fa-solid fa-user"></i>see apllications</a>
-              <a href="/admin/delete/event" class="edit-btn"><i class="fa-solid fa-trash-can"></i> Delete</a>
+              <a href="/alumni/event/<%= data.title %>/edit" class="edit-btn"
+                ><i class="fa-solid fa-pen-to-square"></i>Edit</a
+              >
+              <a href="/alumni/event/<%= data.title %>" class="edit-btn"
+                ><i class="fa-solid fa-street-view"></i>View details</a
+              >
+              <a
+                href="/admin/event/<%= data.title %>/application"
+                class="edit-btn"
+                ><i class="fa-solid fa-user"></i>See applications</a
+              >
+              <a href="/admin/delete/event" class="edit-btn"
+                ><i class="fa-solid fa-trash-can"></i>Delete</a
+              >
             </div>
           </div>
           <% } %>

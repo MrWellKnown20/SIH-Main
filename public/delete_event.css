@@ -1,0 +1,71 @@
+#pop_up_box {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(85, 81, 81, 0.527);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* Light blue background for a modern look */
+    margin: 0;
+}
+
+/* delete_event.css */
+.pop_up_content {
+    padding: 20px;
+  }
+  
+  .pop_up_inner {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 350px;
+    width: 90%;
+    border: 1px solid #e4e4e4;
+  }
+  
+  .event_name {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #1a202c;
+    letter-spacing: 1px;
+  }
+  
+  .pop_up_buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .pop_up_button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 10px;
+    flex: 1;
+  }
+  
+  .back_button {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .delete_button {
+    background-color: #ef4444;
+    color: white;
+  }
+  

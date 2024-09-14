@@ -167,3 +167,13 @@ body {
 .alert-fade {
     animation: fadeOut 4s forwards;
 }
+
+.star {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none; 
+}

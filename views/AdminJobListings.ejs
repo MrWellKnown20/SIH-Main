@@ -27,115 +27,53 @@
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
           >
             <h1 class="h2">Job Listings</h1>
-            <button type="button" class="btn btn-primary">Post New Job</button>
+            <a href="/admin/post"
+              ><button class="btn btn-primary">Post New Job</button></a
+            >
           </div>
 
           <!-- Job Listings -->
           <div class="row">
+            <% for(let job of allJobs) { %>
             <div class="col-md-4">
               <div class="card mb-4">
                 <img
-                  src="../assets/images/graphicdesgn.jpg"
+                  src="<%= job.image %>"
                   class="card-img-top"
                   alt="Financial Analyst"
                 />
                 <div class="card-body">
-                  <h5 class="card-title">Financial Analyst</h5>
+                  <h5 class="card-title"><%= job.title %></h5>
                   <p class="card-text">
-                    Financial Advisory Experts<br />Chicago, IL
+                    <!-- Financial Advisory Experts<br />Chicago, IL -->
+                    <%= job.company %>
                   </p>
-                  <a href="/admin/jobedit" class="btn btn-outline-primary"
-                    >Edit</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img
-                  src="../assets/images/graphicdesgn.jpg"
-                  class="card-img-top"
-                  alt="Project Manager"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Project Manager</h5>
-                  <p class="card-text">Green Solutions Inc.<br />Austin, TX</p>
-                  <a href="/admin/jobedit" class="btn btn-outline-primary"
-                    >Edit</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img
-                  src="../assets/images/graphicdesgn.jpg"
-                  class="card-img-top"
-                  alt="Graphic Designer"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Graphic Designer</h5>
-                  <p class="card-text">Creative Media LLC.<br />New York, NY</p>
-                  <a href="/admin/jobedit" class="btn btn-outline-primary"
-                    >Edit</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img
-                  src="../assets/images/graphicdesgn.jpg"
-                  class="card-img-top"
-                  alt="Supply Chain Manager"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Supply Chain Manager</h5>
-                  <p class="card-text">Global Logistics<br />Seattle, WA</p>
-                  <a href="/admin/jobedit" class="btn btn-outline-primary"
-                    >Edit</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img
-                  src="../assets/images/graphicdesgn.jpg"
-                  class="card-img-top"
-                  alt="Software Engineer"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Software Engineer</h5>
                   <p class="card-text">
-                    Tech Innovations Corp.<br />San Francisco, CA
+                    <!-- Financial Advisory Experts<br />Chicago, IL -->
+                    <%= job.location %>
                   </p>
-                  <a href="/admin/jobedit" class="btn btn-outline-primary"
-                    >Edit</a
-                  >
+                  <div class="star">
+                    <a
+                      href="/admin/<%= job._id %>"
+                      class="btn btn-outline-primary"
+                      >Edit</a
+                    >
+                    <form
+                      method="POST"
+                      action="/admin/<%=job._id%>?_method=DELETE"
+                    >
+                      <button
+                        class="btn btn-outline-primary"
+                        onclick="return confirm('Are you sure you want to delete this item?');"
+                      >
+                        Delete
+                      </button>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img
-                  src="../assets/images/graphicdesgn.jpg"
-                  class="card-img-top"
-                  alt="Nurse Practitioner"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Nurse Practitioner</h5>
-                  <p class="card-text">
-                    HealthCare Partners<br />Los Angeles, CA
-                  </p>
-                  <a href="/admin/jobedit" class="btn btn-outline-primary"
-                    >Edit</a
-                  >
-                </div>
-              </div>
-            </div>
+            <% } %>
           </div>
         </main>
       </div>

@@ -640,8 +640,18 @@ app.get("/admin/event/:event_name/application", async (req, res) => {
 })
 
 app.get("/admin/event/new", (req, res) => {
-    res.render("admin_event_new.ejs")
+    let eventname = req.params.eventname;
+    eventdb.findOne({ title: eventname })
+        .then((result) => {
+            console.log(result)
+            res.render("admin_event_new.ejs", { data: result })
+        })
+        .catch((e) => {
+            res.send("<h1>404 Error<h1>")
+        })
 })
+
+
 
 app.post('/admin/add-event', upload.single('image'), async (req, res) => {
     try {
