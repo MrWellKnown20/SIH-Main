@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="/assets/detail_event.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .event-details {
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 900px;
+        }
+
+        .event-image img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .event-info {
+            padding: 20px;
+            flex: 1 1 50%;
+        }
+
+        .event-title {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .event-description {
+            margin: 15px 0;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .event-info p {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .event-info p a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .event-info p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button Styles */
+        #submit_event {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        #submit_event:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .event-details {
+                flex-direction: column;
+            }
+
+            .event-image img {
+                border-bottom: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .event-title {
+                font-size: 20px;
+            }
+
+            .event-description {
+                font-size: 14px;
+            }
+
+            .event-info p {
+                font-size: 14px;
+            }
+
+            #submit_event {
+                width: 100%;
+                font-size: 18px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Event Details</h1>
+    </header>
+
+    <main>
+        <section class="event-details">
+            <div class="event-image">
+                <img src="<%= data.image %>" alt="Event Image">
+            </div>
+            <div class="event-info">
+                <h2 class="event-title"><%= data.title %></h2>
+                <p class="event-description"><%= data.description %></p>
+                <p><strong>Date:</strong> <span class="event-date">
+                    <%= data.date %>
+                 </span></p>
+                <p><strong>Time:</strong> <span class="event-time"><%= data.time %></span></p>
+                <p><strong>Location:</strong> <span class="event-location"> <%=   data.location%></span></p>
+                <p><strong>Organizer:</strong> <span class="event-organizer"> <%=   data.organizer%></span></p>
+                <p><strong>Type:</strong> <span class="event-type"> <%=   data.EventType%></span></p>
+                <p><strong>Contact:</strong> <span class="event-contact"> <%= data.ContactEmail %></span></p>
+                <p><strong>Website:</strong> <a href="#" class="event-website"><%= data.Website %></a></p>
+                <p><strong>Status:</strong> <span class="event-status"> <%= data.Status %></span></p>
+                <form action="/<%= data.title %>/get_form" >
+                <button id="submit_event">Apply</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AlumniConnect</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event Details</title>
+    <link rel="stylesheet" href="/assets/edit_event.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+
+        header {
+            background-color: #34495e;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+         
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #34495e;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            
+            bottom: 0;
+            width: 100%;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+
+        .event-details {
+            background-color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .event-info label {
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 6px;
+            display: block;
+            font-size: 14px;
+        }
+
+        .event-info input,
+        .event-info textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        .event-info input:focus,
+        .event-info textarea:focus {
+            border-color: #2980b9;
+            outline: none;
+        }
+
+        .event-info input[type="submit"] {
+            background-color: #2980b9;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .event-info input[type="submit"]:hover {
+            background-color: #1f6393;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header, footer {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .event-info label,
+            .event-info input,
+            .event-info textarea,
+            .event-info input[type="submit"] {
+                font-size: 13px;
+            }
+
+            .event-details {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Add Event Details</h1>
+    </header>
+
+    <main>
+        <section class="event-details">
+            <div class="event-info">
+                <form action="/admin/add-event" method="POST" enctype="multipart/form-data">
+                    <label for="image">Event Image:</label>
+                    <input type="file" id="image" name="image" accept="image/*">
+                    
+                    <label for="title">Event Title:</label>
+                    <input type="text" id="title" name="title">
+
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4"></textarea>
+
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date">
+
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time">
+
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location">
+
+                    <label for="organizer">Organizer:</label>
+                    <input type="text" id="organizer" name="organizer">
+
+                    <label for="eventType">Type:</label>
+                    <input type="text" id="eventType" name="eventType">
+
+                    <label for="contact">Contact Email:</label>
+                    <input type="email" id="contact" name="contact">
+
+                    <label for="website">Website:</label>
+                    <input type="url" id="website" name="website">
+
+                    <label for="status">Status:</label>
+                    <input type="text" id="status" name="status">
+
+                    <input type="submit" value="Add">
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AlumniConnect</p>
+    </footer>
+</body>
+</html>

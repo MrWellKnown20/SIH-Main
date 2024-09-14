@@ -618,7 +618,7 @@ app.get("/admin/event", (req, res) => { //dashboard alumni/admin
     console.log("oko")
     eventdb.find()
         .then((result) => {
-            res.render("eventManagement.ejs", { result })
+            res.render("AdminEvent.ejs", { result })
         })
         .catch((e) => {
             res.send("<h1>404 Error<h1>")

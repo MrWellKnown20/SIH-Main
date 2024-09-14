@@ -27,10 +27,12 @@
             Stay informed about future events with detailed information
             including title, date, time, and location.
           </p>
-          <button class="new-event-btn">+ New</button>
+          <form action="/admin/event/new" method="get">
+            <button class="new-event-btn">+ New</button>
+          </form>
         </header>
 
-        <section class="events-grid">
+        <!-- <section class="events-grid">
           <div class="event-card">
             <img src="../assets/images/events.jpg" alt="Tech Symposium" />
             <div class="event-info">
@@ -67,6 +69,33 @@
               <a href="/admin/eventedit" class="edit-btn">Edit</a>
             </div>
           </div>
+        </section> -->
+
+        <section class="events-grid">
+          <% for(data of result){ %>
+          <div class="event-card">
+            <img src="<%= data.image %>" alt="Tech Symposium" />
+            <div class="event-info">
+              <h3><%= data.title %></h3>
+              <p>Date: <%= data.date %></p>
+              <p><%= data.time %> , <%= data.location %></p>
+              <a href="/alumni/event/<%= data.title %>/edit" class="edit-btn"
+                ><i class="fa-solid fa-pen-to-square"></i>Edit</a
+              >
+              <a href="/alumni/event/<%= data.title %>" class="edit-btn"
+                ><i class="fa-solid fa-street-view"></i>View details</a
+              >
+              <a
+                href="/admin/event/<%= data.title %>/application"
+                class="edit-btn"
+                ><i class="fa-solid fa-user"></i>see apllications</a
+              >
+              <a href="/admin/delete/<%= data.title %>" class="edit-btn"
+                ><i class="fa-solid fa-trash-can"></i> Delete</a
+              >
+            </div>
+          </div>
+          <% } %>
         </section>
       </main>
     </div>
