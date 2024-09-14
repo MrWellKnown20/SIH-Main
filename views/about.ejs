@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="stylesheet" href="/about.css" />
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/footer.css" />
+  </head>
+  <body>
+    <%- include("partials/navbar.ejs") %>
+
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container">
+        <h1>About Us</h1>
+        <a href="/home/temp" class="btn">Learn More</a>
+      </div>
+    </header>
+
+    <!-- History Section -->
+    <section id="history" class="history-section">
+      <div class="container">
+        <h2>Institution History Section</h2>
+        <div class="history-content">
+          <div class="history-text">
+            <h3>Our History</h3>
+            <p>
+              Founded in 1920, our institution has a history of excellence,
+              education, and transformation. We continue to build on our legacy,
+              guiding students toward impactful futures.
+            </p>
+          </div>
+          <div class="history-image">
+            <img
+              src="../assets/images/historyofuniversity.jpg"
+              alt="Institution History"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission and Vision Section -->
+    <section id="mission-vision" class="mission-vision-section">
+      <div class="container">
+        <h2>Mission and Vision</h2>
+        <div class="mission-vision-content">
+          <div class="mission">
+            <img src="../assets/images/missioin.png" alt="Mission Image" />
+            <h3>Our Mission</h3>
+            <p>
+              Our mission is to provide exceptional education that fosters
+              academic excellence and lifelong learning.
+            </p>
+          </div>
+          <div class="vision">
+            <img src="../assets/images/vision.jpg" alt="Vision Image" />
+            <h3>Our Vision</h3>
+            <p>
+              To be a globally recognized institution that nurtures intellectual
+              and personal growth for all learners.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements-section">
+      <div class="container">
+        <h2>Our Achievements</h2>
+        <div class="achievements-grid">
+          <div class="achievement">
+            <img src="../assets/images/gobalrecognition.jpg" alt="Award" />
+            <p>Received Best Educational Institution Award 2023</p>
+          </div>
+          <div class="achievement">
+            <img
+              src="../assets/images/gobalrecognition.jpg"
+              alt="Global Recognition"
+            />
+            <p>Global Recognition in Educational Excellence</p>
+          </div>
+          <div class="achievement">
+            <img src="../assets/images/gobalrecognition.jpg" alt="Conference" />
+            <p>Hosted the International Educational Conference 2022</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2>Ready to get in touch?</h2>
+        <p>
+          We're here to help with any questions or inquiries. Reach out to us
+          for more information and support.
+        </p>
+        <a href="#contact" class="btn">Contact Us</a>
+      </div>
+    </section>
+
+    <%- include("partials/footer.ejs") %>
+  </body>
+</html>

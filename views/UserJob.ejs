@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alumni Connect Job Listings</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/job.css" />
+    <link rel="stylesheet" href="/sidebarUser.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+
+        <%- include("partials/UserSidebar.ejs") %>
+
+        <!-- Main content -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <!-- Job Listings -->
+          <section class="job-listings py-5">
+            <div class="container">
+              <h2 class="text-center mb-5">Job Listings</h2>
+              <div class="row">
+                <!-- Job Item 1: TechCorp -->
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img
+                          src="techcorp.jpg"
+                          class="img-fluid rounded-start"
+                          alt="TechCorp Image"
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">TechCorp</h5>
+                          <p class="card-text">Full Stack Developer</p>
+                          <p class="card-text">
+                            TechCorp is seeking a talented developer to join our
+                            innovative team, working on cutting-edge solutions.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Job Item 2: Bright Marketing -->
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img
+                          src="bright-marketing.jpg"
+                          class="img-fluid rounded-start"
+                          alt="Bright Marketing Image"
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Bright Marketing</h5>
+                          <p class="card-text">Marketing Specialist</p>
+                          <p class="card-text">
+                            Join Bright Marketing as we expand our influence in
+                            the global market. Creativity and strategy are key.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Job Item 3: DataLogic -->
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img
+                          src="datalogic.jpg"
+                          class="img-fluid rounded-start"
+                          alt="DataLogic Image"
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">DataLogic</h5>
+                          <p class="card-text">Data Analyst</p>
+                          <p class="card-text">
+                            Analyze complex datasets to provide insights and
+                            drive strategic decision-making at DataLogic.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Job Item 4: PeopleFirst -->
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img
+                          src="peoplefirst.jpg"
+                          class="img-fluid rounded-start"
+                          alt="PeopleFirst Image"
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">PeopleFirst</h5>
+                          <p class="card-text">HR Manager</p>
+                          <p class="card-text">
+                            Develop HR strategies and manage our growing team at
+                            PeopleFirst, ensuring a thriving work environment.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Job Item 5: Designit -->
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img
+                          src="designit.jpg"
+                          class="img-fluid rounded-start"
+                          alt="Designit Image"
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Designit</h5>
+                          <p class="card-text">UX/UI Designer</p>
+                          <p class="card-text">
+                            Design intuitive user experiences for our digital
+                            platform at Designit. Creativity and attention to
+                            detail required.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Job Item 6: BuildRight -->
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img
+                          src="buildright.jpg"
+                          class="img-fluid rounded-start"
+                          alt="BuildRight Image"
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">BuildRight</h5>
+                          <p class="card-text">Project Manager</p>
+                          <p class="card-text">
+                            Lead diverse teams in delivering successful projects
+                            on time and within budget at BuildRight.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Job Item 7: Innovatech -->
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img
+                          src="innovatech.jpg"
+                          class="img-fluid rounded-start"
+                          alt="Innovatech Image"
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Innovatech</h5>
+                          <p class="card-text">Software Engineer</p>
+                          <p class="card-text">
+                            Develop and maintain our software systems at
+                            Innovatech, driving technological advancements.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Job Item 8: WritePro -->
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img
+                          src="writepro.jpg"
+                          class="img-fluid rounded-start"
+                          alt="WritePro Image"
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">WritePro</h5>
+                          <p class="card-text">Content Writer</p>
+                          <p class="card-text">
+                            Create engaging content for diverse platforms at
+                            WritePro, capturing audiences with compelling
+                            stories.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Job Item 9: AnalyzeThis -->
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img
+                          src="analyzethis.jpg"
+                          class="img-fluid rounded-start"
+                          alt="AnalyzeThis Image"
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">AnalyzeThis</h5>
+                          <p class="card-text">Business Analyst</p>
+                          <p class="card-text">
+                            Provide strategic insights to help drive business
+                            growth and efficiency at AnalyzeThis.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Job Item 10: SalesMasters -->
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img
+                          src="salesmasters.jpg"
+                          class="img-fluid rounded-start"
+                          alt="SalesMasters Image"
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">SalesMasters</h5>
+                          <p class="card-text">Sales Executive</p>
+                          <p class="card-text">
+                            Drive sales growth and expand market reach at
+                            SalesMasters, connecting with key clients.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    height: 100vh;
+    color: white;
+    text-align: center;
+    background-image: url('./donation.avif');
+    background-size: cover;
+    /* Ensures the image covers the entire background */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+}
+
+
+.hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #6b45de;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #5838c1;
+}
+
+.donation-form {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    margin-bottom: 15px;
+}
+
+.donation-options {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.donation-options .option {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.donation-options .option.active {
+    background-color: #6b45de;
+    color: white;
+}
+
+.donation-options .option:hover {
+    background-color: #ddd;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+
+    .donation-options .option {
+        padding: 8px 15px;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+.submit {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit {
+    background-color: #6c5ce7;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit:hover {
+    background-color: #5a48c8;
+}
+
+/* Sections Styling */
+.payment-info,
+.donation-details,
+.alumni-support {
+    margin-bottom: 40px;
+    align-items: center;
+    text-align: center;
+}
+
+.alumni-support .submit {
+    margin: 30px;
+    padding: 15px;
+}
+
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .container {
+        padding: 40px;
+    }
+
+    form {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    input[type="text"],
+    .submit {
+        flex: 1 1 48%;
+        max-width: 48%;
+    }
+
+    input[type="text"]:last-child,
+    .submit:last-child {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    input[type="text"],
+    .submit {
+        width: 100%;
+    }
+}

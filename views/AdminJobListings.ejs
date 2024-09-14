@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alumni Connect Job Listings</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/AdminJobListings.css" />
+    <link rel="stylesheet" href="/sidebar.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <%- include("partials/sidebar.ejs") %>
+
+        <!-- Main content -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+          >
+            <h1 class="h2">Job Listings</h1>
+            <button type="button" class="btn btn-primary">Post New Job</button>
+          </div>
+
+          <!-- Job Listings -->
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img
+                  src="../assets/images/graphicdesgn.jpg"
+                  class="card-img-top"
+                  alt="Financial Analyst"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Financial Analyst</h5>
+                  <p class="card-text">
+                    Financial Advisory Experts<br />Chicago, IL
+                  </p>
+                  <a href="/admin/jobedit" class="btn btn-outline-primary"
+                    >Edit</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img
+                  src="../assets/images/graphicdesgn.jpg"
+                  class="card-img-top"
+                  alt="Project Manager"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Project Manager</h5>
+                  <p class="card-text">Green Solutions Inc.<br />Austin, TX</p>
+                  <a href="/admin/jobedit" class="btn btn-outline-primary"
+                    >Edit</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img
+                  src="../assets/images/graphicdesgn.jpg"
+                  class="card-img-top"
+                  alt="Graphic Designer"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Graphic Designer</h5>
+                  <p class="card-text">Creative Media LLC.<br />New York, NY</p>
+                  <a href="/admin/jobedit" class="btn btn-outline-primary"
+                    >Edit</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img
+                  src="../assets/images/graphicdesgn.jpg"
+                  class="card-img-top"
+                  alt="Supply Chain Manager"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Supply Chain Manager</h5>
+                  <p class="card-text">Global Logistics<br />Seattle, WA</p>
+                  <a href="/admin/jobedit" class="btn btn-outline-primary"
+                    >Edit</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img
+                  src="../assets/images/graphicdesgn.jpg"
+                  class="card-img-top"
+                  alt="Software Engineer"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Software Engineer</h5>
+                  <p class="card-text">
+                    Tech Innovations Corp.<br />San Francisco, CA
+                  </p>
+                  <a href="/admin/jobedit" class="btn btn-outline-primary"
+                    >Edit</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img
+                  src="../assets/images/graphicdesgn.jpg"
+                  class="card-img-top"
+                  alt="Nurse Practitioner"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Nurse Practitioner</h5>
+                  <p class="card-text">
+                    HealthCare Partners<br />Los Angeles, CA
+                  </p>
+                  <a href="/admin/jobedit" class="btn btn-outline-primary"
+                    >Edit</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

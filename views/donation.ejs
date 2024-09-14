@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alumni Connect - Donation</title>
+    <link rel="stylesheet" href="/donation.css" />
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/footer.css" />
+  </head>
+  <body>
+    <%- include("partials/navbar.ejs") %>
+
+    <header>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Choose Your Donation</h1>
+          <p>Support a cause that matters to you today.</p>
+          <a href="#" class="btn-primary">One-time Donation</a>
+        </div>
+      </section>
+    </header>
+
+    <section class="donation-form">
+      <div class="form-container">
+        <h2>Donation Options</h2>
+        <div class="donation-options">
+          <button class="option active">One-Time</button>
+          <button class="option">Recurring</button>
+        </div>
+        <input type="text" placeholder="Donation Amount" />
+
+        <h2>Personal Information</h2>
+        <form>
+          <input type="text" placeholder="Full Name" />
+          <input type="email" placeholder="Email Address" />
+          <input type="text" placeholder="Address" />
+          <input type="text" placeholder="Phone Number" />
+        </form>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- Payment Information Section -->
+      <section class="payment-info">
+        <h2>Payment Information</h2>
+        <form>
+          <label>
+            <input type="radio" name="payment" value="bank" checked /> Bank
+            Account
+          </label>
+          <label>
+            <input type="radio" name="payment" value="credit" /> Credit Card
+          </label>
+          <input
+            type="text"
+            placeholder="Card Number / Account Number"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Expiry Date / Routing Number"
+            required
+          />
+          <input type="text" placeholder="CVV / Account Type" required />
+          <button type="submit" class="submit">Donate Now</button>
+        </form>
+      </section>
+
+      <!-- Donation Details Section -->
+      <section class="donation-details">
+        <h2>Donation Details</h2>
+        <form>
+          <label>
+            <input type="checkbox" name="dedicate" /> Dedicate this donation
+          </label>
+          <input type="text" placeholder="Enter dedication details" />
+          <label>
+            <input type="checkbox" name="terms" required /> I consent to terms &
+            conditions
+          </label>
+          <button type="submit" class="submit">Donate Now</button>
+        </form>
+      </section>
+
+      <!-- Alumni Initiatives Section -->
+      <section class="alumni-support">
+        <h2>Support Our Alumni Initiatives</h2>
+        <p>
+          Your contributions make a difference in scholarships, campus
+          development, and more. Choose a one-time or recurring donation and
+          specify your cause.
+        </p>
+        <button type="submit" class="submit">Donate Now</button>
+      </section>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
+  </body>
+</html>

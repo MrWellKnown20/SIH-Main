@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.hero {
+    background-image: url('./networkinghub.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    padding: 180px;
+}
+
+.hero-content h2 {
+    font-size: 5em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 2em;
+}
+
+.create-post-btn {
+    background-color: #6C63FF;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+section {
+    padding: 20px;
+}
+
+/* Forum Topics */
+.forum-topics {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.topic-card {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.topic-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.topic-card h3 {
+    margin-top: 15px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.topic-card p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.topic-card small {
+    color: #999;
+}
+
+/* Featured Members */
+.featured-members {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.member-card {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.member-card img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+.member-card h3 {
+    margin-top: 15px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.member-card p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.footer {
+    background-color: #2E2E2E;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer .newsletter {
+    margin-bottom: 30px;
+}
+
+.footer .newsletter input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+}
+
+.footer .newsletter button {
+    background-color: #6C63FF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footer-links ul li {
+    margin-right: 20px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.footer p {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .create-post-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .topics-grid,
+    .members-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .topics-grid,
+    .members-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+}

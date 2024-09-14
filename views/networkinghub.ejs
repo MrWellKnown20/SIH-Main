@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Alumni Connect</title>
+    <link rel="stylesheet" href="/networking_hub.css" />
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/footer.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <%- include("partials/navbar.ejs") %>
+    <header>
+      <section class="hero">
+        <div class="hero-content">
+          <h2>Join the Conversation</h2>
+          <p>Ask a Question or Share an Update</p>
+          <a href="/home/temp">
+            <button class="create-post-btn">Create Post</button></a
+          >
+        </div>
+      </section>
+    </header>
+
+    <section class="forum-topics">
+      <h2>Forum Topics</h2>
+      <div class="topics-grid">
+        <div class="topic-card">
+          <img src="../assets/images/career-advice.jpg" alt="Career Advice" />
+          <h3>Career Advice</h3>
+          <p>Explore tips and experiences from successful alumni.</p>
+          <p>
+            <small>Posted on: Oct 10, 2023 | Likes: 45 | Comments: 10</small>
+          </p>
+        </div>
+        <div class="topic-card">
+          <img src="../assets/images/career-advice.jpg" alt="Industry Trends" />
+          <h3>Industry Trends</h3>
+          <p>Stay updated with the latest trends in various industries.</p>
+          <p>
+            <small>Posted on: Oct 12, 2023 | Likes: 32 | Comments: 8</small>
+          </p>
+        </div>
+        <!-- Add more cards here -->
+      </div>
+    </section>
+
+    <section class="featured-members">
+      <h2>Featured Members</h2>
+      <div class="members-grid">
+        <div class="member-card">
+          <img src="../assets/images/JamesRodriguez.jpg" alt="John Doe" />
+          <h3>John Doe</h3>
+          <p>John's innovative approach in tech solutions has inspired many.</p>
+        </div>
+        <div class="member-card">
+          <img src="../assets/images/JamesRodriguez.jpg" alt="Jane Smith" />
+          <h3>Jane Smith</h3>
+          <p>Jane's strategic financial insights have driven company growth.</p>
+        </div>
+        <!-- Add more members here -->
+      </div>
+    </section>
+
+    <%- include("partials/footer.ejs") %>
+  </body>
+</html>

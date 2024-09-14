@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upcoming Events</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Events.css" />
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/footer.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+
+    <%- include("partials/navbar.ejs") %>
+
+    <div class="hero">
+      <div class="hero-content">
+        <h1 class="display-4">Upcoming Events</h1>
+        <p class="lead">Reconnect with fellow alumni at our upcoming events.</p>
+        <a href="#" class="btn btn-primary btn-lg">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Filter Buttons -->
+    <section class="container my-4">
+      <div class="row">
+        <div class="col-12 text-center">
+          <div class="btn-group" role="group" aria-label="Event type filters">
+            <button type="button" class="btn btn-primary active">All</button>
+            <button type="button" class="btn btn-outline-primary">
+              Web Design
+            </button>
+            <button type="button" class="btn btn-outline-primary">UX</button>
+            <button type="button" class="btn btn-outline-primary">UI</button>
+            <button type="button" class="btn btn-outline-primary">
+              Branding
+            </button>
+            <button type="button" class="btn btn-outline-primary">
+              Marketing
+            </button>
+          </div>
+        </div>
+        <div class="col-12 text-end mt-3">
+          <select class="form-select w-auto" aria-label="Filter by Event Type">
+            <option selected>Filter by Event Type</option>
+            <!-- Add options here if needed -->
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Cards Section -->
+    <section class="container my-5">
+      <h2 class="text-center mb-5">Upcoming Events</h2>
+      <div class="row g-4">
+        <!-- Engineering Summit -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100">
+            <img
+              src="../events.jpg"
+              class="card-img-top"
+              alt="Engineering Summit"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Engineering Summit</h5>
+              <p class="card-text">Date: March 15, 2024</p>
+              <p class="card-text">
+                Explore cutting-edge innovations in engineering with industry
+                leaders.
+              </p>
+              <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+        <!-- Marketing Conference -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100">
+            <img
+              src="../events.jpg"
+              class="card-img-top"
+              alt="Marketing Conference"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Marketing Conference</h5>
+              <p class="card-text">Date: April 10, 2024</p>
+              <p class="card-text">
+                Join experts in digital marketing to learn the latest
+                strategies.
+              </p>
+              <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+        <!-- Cybersecurity Bootcamp -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100">
+            <img
+              src="../events.jpg"
+              class="card-img-top"
+              alt="Cybersecurity Bootcamp"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Cybersecurity Bootcamp</h5>
+              <p class="card-text">Date: May 5, 2024</p>
+              <p class="card-text">
+                Hands-on training on cybersecurity practices and threat
+                management.
+              </p>
+              <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+        <!-- AI Symposium -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100">
+            <img src="../events.jpg" class="card-img-top" alt="AI Symposium" />
+            <div class="card-body">
+              <h5 class="card-title">AI Symposium</h5>
+              <p class="card-text">Date: June 20, 2024</p>
+              <p class="card-text">
+                Delve into the latest AI research and its applications.
+              </p>
+              <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%- include("partials/footer.ejs") %>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

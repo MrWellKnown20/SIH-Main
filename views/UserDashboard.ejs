@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alumni Connect Dashboard</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/UserDashboard.css" />
+    <link rel="stylesheet" href="/sidebarUser.css" />
+  </head>
+  <body>
+    <% if (success && success.length> 0) { %>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <div><%= success %></div>
+      <div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
+    <% } %>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+
+        <!-- <aside class="sidebar">
+          <div class="sidebar-header">
+            <div class="logo">
+              <img
+                src="../assets/png/logo_afterLogIn.png"
+                alt="Alumni Connect Logo"
+              />
+            </div>
+          </div>
+          <nav class="sidebar-nav">
+            <ul>
+              <li>
+                <a href="/user/dashboard" class="active"
+                  ><i class="fas fa-tachometer-alt"></i>Dashboard</a
+                >
+              </li>
+              <li>
+                <a href="/user/Directory"
+                  ><i class="fas fa-users"></i>Alumni Directory</a
+                >
+              </li>
+              <li>
+                <a href="/user/job"><i class="fas fa-briefcase"></i>Job</a>
+              </li>
+              <li>
+                <a href="/user/forum"
+                  ><i class="fas fa-comments"></i> Networking Hub</a
+                >
+              </li>
+              <li>
+                <a href="/user/event"
+                  ><i class="fas fa-calendar-alt"></i>Upcoming Events</a
+                >
+              </li>
+              <li>
+                <a href=""><i class="fas fa-calendar-alt"></i>Messenger</a>
+              </li>
+              <li>
+                <a href=""><i class="fas fa-calendar-alt"></i>Notifications</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="sidebar-footer">
+            <div class="user-info">
+              <img src="../assets/images/profilephoto.jpg" alt="User" />
+              <span>Amanda</span>
+            </div>
+            <a href="#" class="view-profile">View profile</a>
+          </div>
+        </aside> -->
+
+        <%- include("partials/Usersidebar.ejs") %>
+
+        <!-- Main content -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+          >
+            <h1 class="h2">Welcome back!</h1>
+          </div>
+
+          <!-- Dashboard Cards -->
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h5>Total Followers</h5>
+                  <h3>8,450</h3>
+                  <p class="text-danger">↓ 15%</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h5>New Messages</h5>
+                  <h3>120</h3>
+                  <p class="text-danger">↓ 5%</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h5>Profile Views</h5>
+                  <h3>3,200</h3>
+                  <p class="text-success">↑ 10%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter Buttons -->
+
+          <!-- Event Cards Section -->
+          <section class="container my-5">
+            <h2 class="text-center mb-5">Upcoming Events</h2>
+            <div class="row g-4">
+              <!-- Engineering Summit -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                  <img
+                    src="../events.jpg"
+                    class="card-img-top"
+                    alt="Engineering Summit"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Engineering Summit</h5>
+                    <p class="card-text">Date: March 15, 2024</p>
+                    <p class="card-text">
+                      Explore cutting-edge innovations in engineering with
+                      industry leaders.
+                    </p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Marketing Conference -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                  <img
+                    src="../events.jpg"
+                    class="card-img-top"
+                    alt="Marketing Conference"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Marketing Conference</h5>
+                    <p class="card-text">Date: April 10, 2024</p>
+                    <p class="card-text">
+                      Join experts in digital marketing to learn the latest
+                      strategies.
+                    </p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Cybersecurity Bootcamp -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                  <img
+                    src="../events.jpg"
+                    class="card-img-top"
+                    alt="Cybersecurity Bootcamp"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Cybersecurity Bootcamp</h5>
+                    <p class="card-text">Date: May 5, 2024</p>
+                    <p class="card-text">
+                      Hands-on training on cybersecurity practices and threat
+                      management.
+                    </p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                  </div>
+                </div>
+              </div>
+              <!-- AI Symposium -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                  <img
+                    src="../events.jpg"
+                    class="card-img-top"
+                    alt="AI Symposium"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">AI Symposium</h5>
+                    <p class="card-text">Date: June 20, 2024</p>
+                    <p class="card-text">
+                      Delve into the latest AI research and its applications.
+                    </p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Donation Summary -->
+          <h2>Donation Summary</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h5>Total Donations</h5>
+                  <h3>$5,000</h3>
+                  <p class="text-danger">↓ 50%</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h5>Yearly Goal</h5>
+                  <h3>$10,000</h3>
+                  <p class="text-danger">↓ 50%</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h5>Monthly Contributions</h5>
+                  <h3>$500</h3>
+                  <p class="text-success">↑ 10%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="row">
+            <h3 class="text-center mb-3 mx-2" >Quick Links</h3>
+            <div class="col-md-12 mb-5">
+              <div class="btn-group" role="group" aria-label="Quick Links">
+                <button type="button" class="btn btn-primary mx-5">Gallery</button>
+                <button type="button" class="btn btn-primary mx-5">
+                  Success Stories
+                </button>
+                <button type="button" class="btn btn-primary mx-5">
+                  Feedback & Surveys
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

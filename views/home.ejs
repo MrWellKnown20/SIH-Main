@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alumni Connect</title>
+    <link rel="stylesheet" href="/home.css" />
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/footer.css" />
+  </head>
+
+  <body>
+    <!-- <nav class="navbar">
+        <div class="logo">
+          <img src="../assets/images/logo.png" alt="Alumni Connect Logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="./home">Home</a></li>
+          <li><a href="./home/about">About Us</a></li>
+          <li><a href="./home/networkinghub">Community Forum</a></li>
+          <li><a href="./home/event">Events</a></li>
+          <li><a href="./home/donations">Donations</a></li>
+          <li><a href="./home/job">Job</a></li>
+        </ul>
+        <button class="sign-in-btn">Sign In</button>
+      </nav> -->
+
+    <%- include("partials/navbar.ejs") %>
+
+    <header>
+      <div class="hero">
+        <div class="hero-content">
+          <h1>Welcome back!</h1>
+          <p>Reconnect, share, and grow with fellow alumni.</p>
+          <a href="/temp" class="cta-button">Join the Alumni Network</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="events">
+        <h2>Upcoming Events</h2>
+        <div class="event-cards">
+          <div class="card">
+            <img src="../assets/images/techConference.jpg" alt="" />
+            <h3>Tech Conference</h3>
+            <p>Date: November 20, 2023</p>
+            <p>
+              Join us for a panel discussion on technology and innovation with
+              industry leaders.
+            </p>
+            <a href="/temp" class="register-button">Learn More</a>
+          </div>
+          <div class="card">
+            <img src="../assets/images/winterfestival.jpg" alt="" />
+            <h3>Winter Festival</h3>
+            <p>Date: December 8, 2023</p>
+            <p>
+              Celebrate our annual winter festival with food, games, and live
+              music.
+            </p>
+            <a href="/temp" class="register-button">Learn More</a>
+          </div>
+          <div class="card">
+            <img src="../assets/images/SustainabilityLecture.jpg" alt="" />
+            <h3>Sustainability Lecture</h3>
+            <p>Date: January 15, 2024</p>
+            <p>
+              Attend our keynote lecture on sustainable development in urban
+              areas.
+            </p>
+            <a href="/home/temp" class="register-button">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-alumni">
+        <h2>Featured Alumni Who Landed Their Dream Jobs</h2>
+        <div class="alumni-cards">
+          <div class="card">
+            <img src="../assets/images/alumni.jpg" alt="Emily Chen" />
+            <h3>Emily Chen</h3>
+            <p>
+              Emily Chen turned her passion for coding into a career at a
+              leading tech startup.
+            </p>
+          </div>
+          <div class="card">
+            <img
+              src="../assets/images/JamesRodriguez.jpg"
+              alt="James Rodriguez"
+            />
+            <h3>James Rodriguez</h3>
+            <p>
+              James Rodriguez climbed the corporate ladder to become a marketing
+              director.
+            </p>
+          </div>
+          <div class="card">
+            <img src="../assets/images/mayapatel.jpg" alt="Maya Patel" />
+            <h3>Maya Patel</h3>
+            <p>
+              Maya Patel established her architectural firm and won numerous
+              industry awards.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="network">
+        <h2>Need to Network?</h2>
+        <p>
+          Join our vibrant alumni community to connect, collaborate, and grow
+          your professional network.
+        </p>
+        <a href="/networkinghub" class="cta-button">Browse Now</a>
+      </section>
+
+      <section class="mission">
+        <h2>Support Our Mission</h2>
+        <p>
+          Join us in empowering students and fostering community growth by
+          supporting our mission. Every donation makes a significant impact.
+        </p>
+        <a href="/temp" class="cta-button">Donate Now</a>
+      </section>
+
+      <section class="jobs">
+        <h2>Recent Jobs Posted</h2>
+        <div class="job-cards">
+          <div class="card">
+            <img src="./software.jpg" alt="" />
+            <h3>Software Engineer</h3>
+            <p>San Francisco, CA - Posted on Oct 15</p>
+          </div>
+          <div class="card">
+            <img src="../assets/images/dataanalayst.jpg" alt="" />
+            <h3>Data Analyst</h3>
+            <p>New York, NY - Posted on Oct 18</p>
+          </div>
+          <div class="card">
+            <img src="../assets/images/projectmanagement.jpg" alt="" />
+            <h3>Project Manager</h3>
+            <p>Austin, TX - Posted on Oct 20</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- <footer class="footer">
+      <div class="newsletter">
+        <p>Subscribe to our newsletter</p>
+        <div class="newsletter-input">
+          <input type="email" placeholder="Input your email" />
+          <button>Subscribe</button>
+        </div>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img
+            src="../assets/images/logo_afterLogIn.png"
+            alt="AlumniConnect Logo"
+          />
+        </div>
+        <ul class="footer-links">
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="language">
+          <select>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+        <div class="copyright">
+          <p>© 2024 Brand, Inc.</p>
+        </div>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer> -->
+
+    <%- include("partials/footer.ejs") %>
+  </body>
+</html>

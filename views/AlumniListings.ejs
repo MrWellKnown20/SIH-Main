@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alumni Directory - Alumni Connect</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/AdminAlumniListing.css" />
+    <link rel="stylesheet" href="/sidebarAlumni.css" />
+  </head>
+  <body>
+    <main class="dashboard-container">
+      <%- include("partials/AlumniSidebar.ejs") %>
+
+      <div class="main-content">
+        <h2 class="mt-5 main-header">Alumni Directory</h2>
+        <div class="upcoming-events">
+          <!-- Example Alumni Entry -->
+          <div class="events-grid">
+            <div class="event-card">
+              <img
+                src="../assets/images/JamesRodriguez.jpg"
+                class="card-img-top"
+                alt="Profile Picture"
+              />
+              <div class="event-info">
+                <h3 class="">John Doe</h3>
+                <p class="">
+                  <strong>Graduation Year:</strong> 2010<br />
+                  <strong>Degree:</strong> B.Sc. Computer Science<br />
+                  <strong>Current Job:</strong> Software Engineer at Tech
+                  Innovations Corp.
+                </p>
+                <button class="btn btn-primary">View Profile</button>
+              </div>
+            </div>
+
+            <!-- Repeat the above block for each alumni -->
+
+            <div class="event-card">
+              <img
+                src="../assets/images/JamesRodriguez.jpg"
+                class="card-img-top"
+                alt="Profile Picture"
+              />
+              <div class="event-info">
+                <h3 class="">Jane Smith</h3>
+                <p class="">
+                  <strong>Graduation Year:</strong> 2012<br />
+                  <strong>Degree:</strong> B.A. Graphic Design<br />
+                  <strong>Current Job:</strong> Graphic Designer at Creative
+                  Media LLC.
+                </p>
+                <button class="btn btn-primary">View Profile</button>
+              </div>
+            </div>
+
+            <div class="event-card">
+              <img
+                src="../assets/images/JamesRodriguez.jpg"
+                class="card-img-top"
+                alt="Profile Picture"
+              />
+              <div class="event-info">
+                <h5 class="">Jane Smith</h5>
+                <p class="">
+                  <strong>Graduation Year:</strong> 2012<br />
+                  <strong>Degree:</strong> B.A. Graphic Design<br />
+                  <strong>Current Job:</strong> Graphic Designer at Creative
+                  Media LLC.
+                </p>
+                <button class="btn btn-primary">View Profile</button>
+              </div>
+            </div>
+          </div>
+          <!-- Add more alumni entries as needed -->
+        </div>
+      </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

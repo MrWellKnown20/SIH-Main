@@ -1,0 +1,48 @@
+main {
+    margin-left: 250px;
+}
+
+.main-header {
+    margin: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Filter button styles */
+.btn-group .btn {
+    margin-right: 5px;
+}
+
+/* Event card section */
+section.events {
+    padding: 40px 0;
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.card h5 {
+    font-size: 1.25rem;
+}
+
+/* Add responsive design where needed */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .card-body p {
+        font-size: 0.8rem;
+    }
+}

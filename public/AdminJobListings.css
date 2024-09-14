@@ -1,0 +1,20 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+h2 {
+    margin-top: 20px;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+    <% if (success && success.length > 0) { %>
+        <div class="alert alert-success">
+          <%= success %>
+        </div>
+      <% } %>
+      
+      <% if (error && error.length > 0) { %>
+        <div class="alert alert-danger">
+          <%= error %>
+        </div>
+      <% } %>
+    <div class="container">
+        <!-- Button Row -->
+        <div class="button-row">
+            <button type="button" name="action" value="admin" class="selected" onclick="setFormAction('signup1')">Admin</button>
+            <button type="button" name="action" value="alumni" onclick="setFormAction('signup2')">Alumni</button>
+            <button type="button" name="action" value="user" onclick="setFormAction('signup3')">User</button>
+        </div>
+
+        <div class="login-box">
+            <h1>Signup to your Portal</h1>
+            <p>Welcome back! Please login to your admin portal.</p>
+
+            <form id="myForm" action="/signup" method="POST">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn-login">SignUp</button>
+
+                <div class="links">
+                    <h3>Log-In your account</h3>
+                    <button class="t1"><a href="/login" class="sign-up">Log-In</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function setFormAction(action) {
+            const form = document.getElementById('myForm');
+            form.action = `/${action}`;
+
+            // Deselect all buttons and select the clicked one
+            const buttons = document.querySelectorAll('.button-row button');
+            buttons.forEach(button => button.classList.remove('selected'));
+
+            const selectedButton = document.querySelector(`button[value="${signup}"]`);
+            selectedButton.classList.add('selected');
+        }
+    </script>
+</body>
+</html>

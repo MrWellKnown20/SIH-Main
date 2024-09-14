@@ -1,0 +1,57 @@
+/* Custom Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.hero {
+    background-image: url('./events.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    padding: 180px;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Filter button styles */
+.btn-group .btn {
+    margin-right: 5px;
+}
+
+/* Event card section */
+section.events {
+    padding: 40px 0;
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.card h5 {
+    font-size: 1.25rem;
+}
+
+/* Add responsive design where needed */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .card-body p {
+        font-size: 0.8rem;
+    }
+}
