@@ -143,8 +143,8 @@ app.get("/event", (req, res) => {
 })
 
 //donation
-app.get("/donations", isLogin, (req, res) => {
-    res.render("donation");
+app.get("/donations", (req, res) => {
+    res.render("donation.ejs");
 })
 
 //job
