@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alumni Connect Job Listings</title>
     <link
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-  />
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
     <link rel="stylesheet" href="/AdminJobListings.css" />
     <link rel="stylesheet" href="/sidebarAlumni.css" />
@@ -32,7 +32,11 @@
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
           >
             <h1 class="h2">Job Listings</h1>
-            <button type="button" class="btn btn-primary">Post New Job</button>
+            <a href="/alumni/newJob"
+              ><button type="button" class="btn btn-primary">
+                Post New Job
+              </button></a
+            >
           </div>
 
           <!-- Job Listings -->
@@ -49,17 +53,20 @@
                   <h5 class="card-title"><%= job.title %></h5>
                   <p class="card-text"><%= job.company %></p>
                   <p class="card-text"><%= job.location %></p>
-                  <a
-                    href="/alumni/jobedit/<%= job._id %>"
-                    class="btn btn-outline-primary"
-                    >Edit</a
-                  >
-                  <form
-                    method="POST"
-                    action="/alumniJobDelete/<%= job._id %>?_method=DELETE"
-                  >
-                    <button class="btn btn-outline-primary">Delete</button>
-                  </form>
+
+                  <div class="star">
+                    <a
+                      href="/alumni/jobedit/<%= job._id %>"
+                      class="btn btn-outline-primary"
+                      >Edit</a
+                    >
+                    <form
+                      method="POST"
+                      action="/alumniJobDelete/<%= job._id %>?_method=DELETE"
+                    >
+                      <button class="btn btn-outline-primary">Delete</button>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>

@@ -302,7 +302,7 @@ app.get("/alumni/jobedit/:id", async (req, res) => {
 })
 
 
-//alummni job edit
+//alumni job edit
 app.put("/alumni/:id", async (req, res) => {
     let { id } = req.params;
 
@@ -332,7 +332,7 @@ app.put("/alumni/:id", async (req, res) => {
 })
 
 
-//admin delete
+//admin delete job
 app.delete("/admin/:id", async (req, res) => {
     let { id } = req.params;
 
@@ -355,6 +355,32 @@ app.delete("/admin/:id", async (req, res) => {
         console.error("Error updating job:", err);
         req.flash("error", "Error occurred while updating job");
         res.redirect("/admin/job");
+    }
+});
+
+//alumni delete Job
+app.delete("/alumniJobDelete/:id", async (req, res) => {
+    let { id } = req.params;
+
+    if (!ObjectId.isValid(id)) {
+        req.flash("error", "Invalid job ID");
+        return res.redirect("/alumni/job");
+    }
+
+    try {
+        const updateJob = await Job.findByIdAndDelete(id);
+
+        if (updateJob) {
+            req.flash("success", "Job updated successfully");
+            res.redirect("/alumni/job");
+        } else {
+            req.flash("error", "Job not found");
+            res.redirect("/alumni/job");
+        }
+    } catch (err) {
+        console.error("Error updating job:", err);
+        req.flash("error", "Error occurred while updating job");
+        res.redirect("/alumni/job");
     }
 });
 
@@ -436,6 +462,11 @@ app.get("/alumni/job", (req, res) => {
 app.get("/alumni/network", (req, res) => {
     res.render("AlumniNetworHub")
 })
+
+//alumni event
+app.get("/alumni/event", (req, res) => {
+    res.render("AlumniEvent.ejs")
+});
 
 
 
