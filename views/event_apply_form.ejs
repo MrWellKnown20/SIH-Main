@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Event Application</title>
     <link
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -16,170 +16,67 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" href="/assets/form_styles.css">
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/footer.css" />
+    <link rel="stylesheet" href="/form_style.css" />
+  </head>
+  <body>
+    <%- include("partials/navbar.ejs") %>
 
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
-        }
-
-        main {
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 80vh;
-        }
-
-        .application-form {
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 600px;
-            width: 100%;
-        }
-
-        .application-form h2 {
-            margin-top: 0;
-            font-size: 24px;
-            color: #333;
-        }
-
-        .application-form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .application-form input, 
-        .application-form textarea, 
-        .application-form select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            color: #333;
-        }
-
-        .application-form textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .application-form button {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            color: white;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-
-        .application-form button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .application-form {
-                padding: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .application-form h2 {
-                font-size: 20px;
-            }
-
-            .application-form input, 
-            .application-form textarea, 
-            .application-form select {
-                font-size: 14px;
-            }
-
-            .application-form button {
-                font-size: 18px;
-            }
-        }
-    </style>
-</head>
-<body>
     <header>
-        <h1>Event Application Form</h1>
+      <h1>Event Application Form</h1>
     </header>
 
     <main>
-        <form class="application-form" action="/<%= name %>/submit-application" method="POST">
-            <h2>Student Details</h2>
-            
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
+      <form
+        class="application-form"
+        action="/<%= name %>/submit-application"
+        method="POST"
+      >
+        <h2>Student Details</h2>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required />
 
-            <label for="studentID">Student ID:</label>
-            <input type="text" id="studentID" name="studentID" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
 
-            <label for="department">Department:</label>
-            <input type="text" id="department" name="department" required>
+        <label for="studentID">Student ID:</label>
+        <input type="text" id="studentID" name="studentID" required />
 
-            <label for="year">Year of Study:</label>
-            <select id="year" name="year" required>
-                <option value="1st Year">1st Year</option>
-                <option value="2nd Year">2nd Year</option>
-                <option value="3rd Year">3rd Year</option>
-                <option value="4th Year">4th Year</option>
-                <!-- Add more options as needed -->
-            </select>
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required />
 
-            <label for="contact">Contact Number:</label>
-            <input type="tel" id="contact" name="contact" required>
+        <label for="year">Year of Study:</label>
+        <select id="year" name="year" required>
+          <option value="1st Year">1st Year</option>
+          <option value="2nd Year">2nd Year</option>
+          <option value="3rd Year">3rd Year</option>
+          <option value="4th Year">4th Year</option>
+          <!-- Add more options as needed -->
+        </select>
 
-            <label for="contact">Whatapp Number:</label>
-            <input type="tel" id="contact" name="contact" required>
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contact" name="contact" required />
 
+        <label for="whatsapp">WhatsApp Number:</label>
+        <input type="tel" id="whatsapp" name="whatsapp" required />
 
-            <label for="address">Address:</label>
-            <textarea id="address" name="address" required></textarea>
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea>
 
+        <label for="motivation">Why do you want to join this event?</label>
+        <textarea
+          id="motivation"
+          name="motivation"
+          placeholder="Share your reasons..."
+          required
+        ></textarea>
 
-            <label for="motivation">Why do you want to join this event?</label>
-            <textarea id="motivation" name="motivation" placeholder="Share your reasons..." required></textarea>
-
-            <button type="submit">Submit Application</button>
-        </form>
+        <button type="submit">Submit Application</button>
+      </form>
     </main>
 
-    <footer>
-        <p>&copy; 2024 AlumniConnect</p>
-    </footer>
-</body>
+    <%- include("partials/footer.ejs") %>
+  </body>
 </html>
