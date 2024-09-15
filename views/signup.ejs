@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Portal</title>
     <link
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,71 +16,137 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/login.css">
-</head>
-<body>
+
+    <link rel="stylesheet" href="/home.css" />
+    <link rel="stylesheet" href="/login.css" />
+  </head>
+  <body>
     <% if (success && success.length > 0) { %>
-        <div class="alert alert-success">
-          <%= success %>
-        </div>
-      <% } %>
-      
-      <% if (error && error.length > 0) { %>
-        <div class="alert alert-danger">
-          <%= error %>
-        </div>
-      <% } %>
-    <div class="container">
-        <!-- Button Row -->
-        <div class="button-row">
-            <button type="button" name="action" value="admin" class="selected" onclick="setFormAction('signup1')">Admin</button>
-            <button type="button" name="action" value="alumni" onclick="setFormAction('signup2')">Alumni</button>
-            <button type="button" name="action" value="user" onclick="setFormAction('signup3')">User</button>
-        </div>
+    <div class="alert alert-success"><%= success %></div>
+    <% } %> <% if (error && error.length > 0) { %>
+    <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="btn-group btn-group-toggle mb-4" id="buttonGroup">
+              <button
+                type="button"
+                name="action"
+                value="admin"
+                class="btn btn-outline-primary active"
+                onclick="setFormAction('signup1', this)"
+              >
+                Admin
+              </button>
+              <button
+                type="button"
+                name="action"
+                value="alumni"
+                class="btn btn-outline-primary"
+                onclick="setFormAction('signup2', this)"
+              >
+                Alumni
+              </button>
+              <button
+                type="button"
+                name="action"
+                value="user"
+                class="btn btn-outline-primary"
+                onclick="setFormAction('signup3', this)"
+              >
+                User
+              </button>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title text-center">Signup to your Portal</h3>
+              <p class="card-text text-center">
+                Welcome back! Please Signup to admin portal.
+              </p>
 
-        <div class="login-box">
-            <h1>Signup to your Portal</h1>
-            <p>Welcome back! Please login to your admin portal.</p>
+              <form id="myForm" action="/signup" method="POST">
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    name="username"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-success btn-block">
+                  SignUp
+                </button>
+              </form>
 
-            <form id="myForm" action="/signup" method="POST">
-                <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn-login">SignUp</button>
-
-                <div class="links">
-                    <h3>Log-In your account</h3>
-                    <button class="t1"><a href="/login" class="sign-up">Log-In</a></button>
-                </div>
-            </form>
+              <div
+                class="text-center mt-4 d-flex justify-content-center align-items-center"
+              >
+                <p class="mb-0 mr-2">Already have an account</p>
+                <a href="/login" class="btn btn-primary px-5">Log-In</a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <script>
-        function setFormAction(action) {
-            const form = document.getElementById('myForm');
-            form.action = `/${action}`;
+      function setFormAction(action, element) {
+        const form = document.getElementById("myForm");
+        form.action = `/${action}`;
 
-            // Deselect all buttons and select the clicked one
-            const buttons = document.querySelectorAll('.button-row button');
-            buttons.forEach(button => button.classList.remove('selected'));
+        // Get all buttons in the button group
+        var buttons = document.querySelectorAll("#buttonGroup .btn");
 
-            const selectedButton = document.querySelector(`button[value="${signup}"]`);
-            selectedButton.classList.add('selected');
-        }
+        // Remove the 'active' class from all buttons
+        buttons.forEach(function (button) {
+          button.classList.remove("active", "btn-primary");
+          button.classList.add("btn-outline-primary");
+        });
+
+        // Add the 'active' class to the clicked button
+        element.classList.remove("btn-outline-primary");
+        element.classList.add("active", "btn-primary");
+      }
     </script>
-</body>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXlNHjQk5LRp6om6cK8ef10Unf1e04Jfp6JdB6d5y4U9KDCRs+8ttT1d6a"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgI+N9KPleQSBklB6M1xF7f6AK7pC1BIz2nH0jIoGFA6c3ZeBR"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

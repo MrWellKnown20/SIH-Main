@@ -28,6 +28,13 @@
     font-size: 3rem;
 }
 
+
+a:hover {
+    text-decoration: none;
+    color: white;
+
+}
+
 .btn {
     display: inline-block;
     margin-top: 20px;
@@ -36,6 +43,11 @@
     color: white;
     text-decoration: none;
     border-radius: 5px;
+}
+
+.btn:hover {
+    color: white;
+    text-decoration: none;
 }
 
 /* Section styling */
@@ -47,13 +59,18 @@
     text-align: center;
 }
 
-.history-content,
 .mission-vision-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
     margin-top: 40px;
+}
+
+.history-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 /* History section styling */

@@ -655,17 +655,18 @@ app.get("/admin/delete/:event_name", (req, res) => {
 
 
 // ADMIN EVENT:
+
 app.get("/admin/event", (req, res) => { //dashboard alumni/admin
     console.log("oko")
     eventdb.find()
         .then((result) => {
-            res.render("AdminEvent.ejs", { result })
+            res.render("eventManagement.ejs", { result })
         })
         .catch((e) => {
             res.send("<h1>404 Error<h1>")
         })
 
-})
+});
 
 app.get("/admin/event/:event_name/application", async (req, res) => {
     async function connectdb() {
