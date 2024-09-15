@@ -485,6 +485,11 @@ app.get("/user/Directory", (req, res) => {
 //     res.render("UserJob");
 // })
 
+//user event
+app.get("/user/event", (req, res) => {
+    res.render("UserEvent.ejs");
+})
+
 
 
 //user/forum

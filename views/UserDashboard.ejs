@@ -36,59 +36,6 @@
     <% } %>
     <div class="container-fluid">
       <div class="row">
-        <!-- Sidebar -->
-
-        <!-- <aside class="sidebar">
-          <div class="sidebar-header">
-            <div class="logo">
-              <img
-                src="../assets/png/logo_afterLogIn.png"
-                alt="Alumni Connect Logo"
-              />
-            </div>
-          </div>
-          <nav class="sidebar-nav">
-            <ul>
-              <li>
-                <a href="/user/dashboard" class="active"
-                  ><i class="fas fa-tachometer-alt"></i>Dashboard</a
-                >
-              </li>
-              <li>
-                <a href="/user/Directory"
-                  ><i class="fas fa-users"></i>Alumni Directory</a
-                >
-              </li>
-              <li>
-                <a href="/user/job"><i class="fas fa-briefcase"></i>Job</a>
-              </li>
-              <li>
-                <a href="/user/forum"
-                  ><i class="fas fa-comments"></i> Networking Hub</a
-                >
-              </li>
-              <li>
-                <a href="/user/event"
-                  ><i class="fas fa-calendar-alt"></i>Upcoming Events</a
-                >
-              </li>
-              <li>
-                <a href=""><i class="fas fa-calendar-alt"></i>Messenger</a>
-              </li>
-              <li>
-                <a href=""><i class="fas fa-calendar-alt"></i>Notifications</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="sidebar-footer">
-            <div class="user-info">
-              <img src="../assets/images/profilephoto.jpg" alt="User" />
-              <span>Amanda</span>
-            </div>
-            <a href="#" class="view-profile">View profile</a>
-          </div>
-        </aside> -->
-
         <%- include("partials/Usersidebar.ejs") %>
 
         <!-- Main content -->
@@ -132,88 +79,6 @@
 
           <!-- Filter Buttons -->
 
-          <!-- Event Cards Section -->
-          <section class="container my-5">
-            <h2 class="text-center mb-5">Upcoming Events</h2>
-            <div class="row g-4">
-              <!-- Engineering Summit -->
-              <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                  <img
-                    src="../events.jpg"
-                    class="card-img-top"
-                    alt="Engineering Summit"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Engineering Summit</h5>
-                    <p class="card-text">Date: March 15, 2024</p>
-                    <p class="card-text">
-                      Explore cutting-edge innovations in engineering with
-                      industry leaders.
-                    </p>
-                    <a href="#" class="btn btn-primary">View Details</a>
-                  </div>
-                </div>
-              </div>
-              <!-- Marketing Conference -->
-              <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                  <img
-                    src="../events.jpg"
-                    class="card-img-top"
-                    alt="Marketing Conference"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Marketing Conference</h5>
-                    <p class="card-text">Date: April 10, 2024</p>
-                    <p class="card-text">
-                      Join experts in digital marketing to learn the latest
-                      strategies.
-                    </p>
-                    <a href="#" class="btn btn-primary">View Details</a>
-                  </div>
-                </div>
-              </div>
-              <!-- Cybersecurity Bootcamp -->
-              <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                  <img
-                    src="../events.jpg"
-                    class="card-img-top"
-                    alt="Cybersecurity Bootcamp"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Cybersecurity Bootcamp</h5>
-                    <p class="card-text">Date: May 5, 2024</p>
-                    <p class="card-text">
-                      Hands-on training on cybersecurity practices and threat
-                      management.
-                    </p>
-                    <a href="#" class="btn btn-primary">View Details</a>
-                  </div>
-                </div>
-              </div>
-              <!-- AI Symposium -->
-              <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                  <img
-                    src="../events.jpg"
-                    class="card-img-top"
-                    alt="AI Symposium"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">AI Symposium</h5>
-                    <p class="card-text">Date: June 20, 2024</p>
-                    <p class="card-text">
-                      Delve into the latest AI research and its applications.
-                    </p>
-                    <a href="#" class="btn btn-primary">View Details</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
           <!-- Donation Summary -->
           <h2>Donation Summary</h2>
           <div class="row">
@@ -248,10 +113,12 @@
 
           <!-- Quick Links -->
           <div class="row">
-            <h3 class="text-center mb-3 mx-2" >Quick Links</h3>
+            <h3 class="text-center mb-3 mx-2">Quick Links</h3>
             <div class="col-md-12 mb-5">
               <div class="btn-group" role="group" aria-label="Quick Links">
-                <button type="button" class="btn btn-primary mx-5">Gallery</button>
+                <button type="button" class="btn btn-primary mx-5">
+                  Gallery
+                </button>
                 <button type="button" class="btn btn-primary mx-5">
                   Success Stories
                 </button>

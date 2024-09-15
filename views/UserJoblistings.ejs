@@ -18,13 +18,15 @@
     />
 
     <link rel="stylesheet" href="/AdminJobListings.css" />
-    <link rel="stylesheet" href="/sidebarAlumni.css" />
+    <link rel="stylesheet" href="/job.css" />
+    <link rel="stylesheet" href="/sidebarUser.css" />
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
         <!-- Sidebar -->
-        <%- include("partials/AlumniSidebar.ejs") %>
+
+        <%- include("partials/UserSidebar.ejs") %>
 
         <!-- Main content -->
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
@@ -32,14 +34,11 @@
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
           >
             <h1 class="h2">Job Listings</h1>
-            <a href="/alumni/newJob"
-              ><button type="button" class="btn btn-primary">
-                Post New Job
-              </button></a
-            >
+            <!-- <button type="button" class="btn btn-primary">Post New Job</button> -->
           </div>
 
           <!-- Job Listings -->
+
           <div class="row">
             <% for(let job of allJobs) { %>
             <div class="col-md-4">
@@ -56,21 +55,15 @@
 
                   <div class="star">
                     <a
-                      href="/alumni/jobedit/<%= job._id %>"
+                      href="/user/jobview/<%= job._id %>"
                       class="btn btn-outline-primary"
-                      >Edit</a
+                      >View</a
                     >
-                    <form
-                      method="POST"
-                      action="/alumniJobDelete/<%= job._id %>?_method=DELETE"
+                    <a
+                      href="/user/apply/<%= job.title %>"
+                      class="btn btn-outline-primary"
+                      >Apply</a
                     >
-                      <button
-                        class="btn btn-outline-primary"
-                        onclick="return confirm('Are you sure you want to delete this item?');"
-                      >
-                        Delete
-                      </button>
-                    </form>
                   </div>
                 </div>
               </div>
