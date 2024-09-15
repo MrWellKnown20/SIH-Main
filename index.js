@@ -175,6 +175,11 @@ app.post("/alumni", passport.authenticate("local", {
     console.log("alumni click");
 });
 
+app.get("/alumni/dashboard", (req, res) => {//alumni dashboard 
+    res.render("AlumniDashboard.ejs");
+    console.log("alumni click");
+});
+
 app.post("/admin", passport.authenticate("local", {
     failureRedirect: "/login",
     failureFlash: true

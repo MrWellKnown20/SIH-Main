@@ -1,122 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alumni Connect Job Listings</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link rel="stylesheet" href="/UserView.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container-fluid"></div>
     <div class="row">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <img src="../assets/png/logo_afterLogIn.png" alt="Alumni Connect Logo" />
-                </div>
-            </div>
-            <nav class="sidebar-nav">
-                <ul>
-                    <li>
-                        <a href="/user/dashboard" class="active"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="/user/Directory"><i class="fas fa-users"></i>Alumni Directory</a>
-                    </li>
-                    <li>
-                        <a href="/user/job"><i class="fas fa-briefcase"></i>Job Postings</a>
-                    </li>
-                    <li>
-                        <a href="/user/forum"><i class="fas fa-comments"></i> Networking Hub</a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fas fa-calendar-alt"></i>Upcoming Events</a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fas fa-calendar-alt"></i>Messenger</a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fas fa-calendar-alt"></i>Notifications</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="sidebar-footer">
-                <div class="user-info">
-                    <img src="../assets/images/profilephoto.jpg" alt="User" />
-                    <span>Amanda</span>
-                </div>
-                <a href="#" class="view-profile">View profile</a>
-            </div>
-        </aside>
-
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card mt-5">
-                        <div class="card-header">
-                            <h3>Apply for job</h3>
-                        </div>
-                        <div class="card-body">
-                            <form method="POST" action="/user/applyData">
-                                <div class="form-group">
-                                    <label for="jobName">Name</label>
-                                    <input type="text" class="form-control" id="jobName" placeholder="Enter your name"
-                                        name="name" />
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="jobLocation">Email</label>
-                                    <input type="email" class="form-control" id="jobLocation"
-                                        placeholder="Enter your email" name="email" />
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="jobLocation">Password</label>
-                                    <input type="password" class="form-control" id="jobLocation"
-                                        placeholder="Enter your Password" name="password" />
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="jobLocation">Phone</label>
-                                    <input type="number" class="form-control" id="jobLocation"
-                                        placeholder="Enter your contact number" name="phone" />
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="jobLocation">Skill</label>
-                                    <input type="text" class="form-control" id="jobLocation"
-                                        placeholder="Enter your skill" name="skill" />
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="jobLocation">Qualification</label>
-                                    <input type="text" class="form-control" id="jobLocation"
-                                        placeholder="Enter your qualification" name="qualification" />
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="jobLocation">Experience</label>
-                                    <input type="text" class="form-control" id="jobLocation"
-                                        placeholder="Enter your Experience" name="experience" />
-                                </div>
-
-                                <div class="form-group"></div>
-                                    <input style="display: none;" value="<%= title %>" type="text" class="form-control" id="jobLocation"
-                                        placeholder="Enter your job possition" name="for_post" />
-                                </div>
-                            
-                        </div>
-                        <button type="submit">Apply</button>
-                    </div>
-                </div>
-            </div>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <img
+              src="../assets/png/logo_afterLogIn.png"
+              alt="Alumni Connect Logo"
+            />
+          </div>
         </div>
-    </div>
-    </div>
-</body>
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="/user/dashboard" class="active"
+                ><i class="fas fa-tachometer-alt"></i>Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="/user/Directory"
+                ><i class="fas fa-users"></i>Alumni Directory</a
+              >
+            </li>
+            <li>
+              <a href="/user/job"
+                ><i class="fas fa-briefcase"></i>Job Postings</a
+              >
+            </li>
+            <li>
+              <a href="/user/forum"
+                ><i class="fas fa-comments"></i> Networking Hub</a
+              >
+            </li>
+            <li>
+              <a href=""><i class="fas fa-calendar-alt"></i>Upcoming Events</a>
+            </li>
+            <li>
+              <a href=""><i class="fas fa-calendar-alt"></i>Messenger</a>
+            </li>
+            <li>
+              <a href=""><i class="fas fa-calendar-alt"></i>Notifications</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="user-info">
+            <img src="../assets/images/profilephoto.jpg" alt="User" />
+            <span>Amanda</span>
+          </div>
+          <a href="#" class="view-profile">View profile</a>
+        </div>
+      </aside>
 
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card mt-5">
+              <div class="card-header">
+                <h3>Apply for job</h3>
+              </div>
+              <div class="card-body">
+                <form method="POST" action="/user/applyData">
+                  <div class="form-group">
+                    <label for="jobName">Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="jobName"
+                      placeholder="Enter your name"
+                      name="name"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="jobLocation">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="jobLocation"
+                      placeholder="Enter your email"
+                      name="email"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="jobLocation">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="jobLocation"
+                      placeholder="Enter your Password"
+                      name="password"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="jobLocation">Phone</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="jobLocation"
+                      placeholder="Enter your contact number"
+                      name="phone"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="jobLocation">Skill</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="jobLocation"
+                      placeholder="Enter your skill"
+                      name="skill"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="jobLocation">Qualification</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="jobLocation"
+                      placeholder="Enter your qualification"
+                      name="qualification"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="jobLocation">Experience</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="jobLocation"
+                      placeholder="Enter your Experience"
+                      name="experience"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      style="display: none"
+                      value="<%= title %>"
+                      type="text"
+                      class="form-control"
+                      id="jobLocation"
+                      placeholder="Enter your job possition"
+                      name="for_post"
+                    />
+                  </div>
+
+                  <button type="submit">Apply</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
