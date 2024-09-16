@@ -31,13 +31,37 @@
             Stay informed about future events with detailed information
             including title, date, time, and location.
           </p>
-          <form action="/alumni/event/new" method="get">
+          <form action="/alumni/event/new/add" method="get">
             <button class="new-event-btn">+ New</button>
           </form>
         </header>
 
+
         <section class="events-grid">
-          
+          <% for(data of result){ %>
+          <div class="event-card">
+            <img src="<%= data.image %>" alt="Tech Symposium" />
+            <div class="event-info">
+              <h3><%= data.title %></h3>
+              <p>Date: <%= data.date %></p>
+              <p><%= data.time %> , <%= data.location %></p>
+              <a href="/real_alumni/event/<%= data.title %>/edit" class="edit-btn"
+                ><i class="fa-solid fa-pen-to-square"></i>Edit</a
+              >
+              <a href="/real_alumni/event/<%= data.title %>" class="edit-btn"
+                ><i class="fa-solid fa-street-view"></i>View details</a
+              >
+              <a
+                href="/alumni/event/<%= data.title %>/application"
+                class="edit-btn"
+                ><i class="fa-solid fa-user"></i>see apllications</a
+              >
+              <a href="/alumni/delete/<%= data.title %>" class="edit-btn"
+                ><i class="fa-solid fa-trash-can"></i> Delete</a
+              >
+            </div>
+          </div>
+          <% } %>
         </section>
       </main>
     </div>

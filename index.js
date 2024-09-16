@@ -162,7 +162,7 @@ app.post("/user", passport.authenticate("local", {
     failureFlash: true //error asel tar
 }), (req, res) => {
     req.flash("success", "Welcome back to AlumniConnect..!");
-    res.render("UserDashboard");
+   res.redirect("/user/dashboard")
     console.log("user click");
 });
 
@@ -171,7 +171,8 @@ app.post("/alumni", passport.authenticate("local", {
     failureFlash: true
 }), (req, res) => {
     req.flash("success", "Welcome back to AlumniConnect..!");
-    res.render("AlumniDashboard.ejs");
+    // res.render("AlumniDashboard.ejs");
+    res.redirect("/alumni/dashboard")
     console.log("alumni click");
 });
 
@@ -186,7 +187,8 @@ app.post("/admin", passport.authenticate("local", {
 }), async (req, res) => {
     req.flash("success", "Welcome back to AlumniConnect..!");
     let alldata = await Job.find({});
-    res.render("AdminDashboard.ejs", { alldata });
+    
+    res.redirect("/admin/new")
     console.log("admin click");
 });
 
@@ -465,7 +467,13 @@ app.get("/alumni/network", (req, res) => {
 
 //alumni event
 app.get("/alumni/event", (req, res) => {
-    res.render("AlumniEvent.ejs")
+    eventdb.find()
+        .then((result) => {
+            res.render("AlumniEvent.ejs", { result })
+        })
+        .catch((e) => {
+            res.send("<h1>404 Error<h1>")
+        })
 });
 
 
@@ -487,7 +495,15 @@ app.get("/user/Directory", (req, res) => {
 
 //user event
 app.get("/user/event", (req, res) => {
-    res.render("UserEvent.ejs");
+    eventdb.find()
+    .then((result) => {
+        console.log(result)
+        res.render("UserEvent.ejs", { result })
+    })
+    .catch((e) => {
+        res.send("<h1>404 Error<h1>")
+    })
+  
 })
 
 
@@ -499,7 +515,7 @@ app.get("/user/forum", (req, res) => {
 
 //temperary
 app.get("/temp", isLogin, (req, res) => {
-    res.render("/temp")
+    res.render("temp")
 })
 
 
@@ -541,12 +557,36 @@ app.get("/alumni/event/:eventname", (req, res) => {
         })
 })
 
+app.get("/real_alumni/event/:eventname", (req, res) => {
+    let eventname = req.params.eventname;
+    eventdb.findOne({ title: eventname })
+        .then((result) => {
+            console.log(result)
+            res.render("detail_event_realalumia.ejs", { data: result })
+        })
+        .catch((e) => {
+            res.send("<h1>404 Error<h1>")
+        })
+})
+
 app.get("/alumni/event/:eventname/edit", (req, res) => {
     let eventname = req.params.eventname;
     eventdb.findOne({ title: eventname })
         .then((result) => {
             console.log(result)
             res.render("alumia_event_edit.ejs", { data: result })
+        })
+        .catch((e) => {
+            res.send("<h1>404 Error<h1>")
+        })
+})
+
+app.get("/real_alumni/event/:eventname/edit", (req, res) => {
+    let eventname = req.params.eventname;
+    eventdb.findOne({ title: eventname })
+        .then((result) => {
+            console.log(result)
+            res.render("real_alumni_event_edit.ejs", { data: result })
         })
         .catch((e) => {
             res.send("<h1>404 Error<h1>")
@@ -587,6 +627,36 @@ app.post("/Admin/event/:event_name/update-event", (req, res) => {
         })
 })
 
+app.post("/alumni/event/:event_name/update-event", (req, res) => {
+    let data = req.body
+    let event_name = req.params.event_name;
+    let event = ""
+    for (let i = 0; i < event_name.length; i++) {
+        if (event_name[i] == "+") break;
+        else {
+            event += event_name[i]
+        }
+    }
+    console.log(data)
+    eventdb.replaceOne({ title: event }, {
+        title: data.title,
+        image: data.image,
+        description: data.description,
+        date: data.date,
+        time: data.time,
+        location: data.location,
+        organizer: data.organizer,
+        EventType: data.eventType,
+        ContactEmail: data.contact,
+        Website: data.website,
+        Status: data.status,
+    })
+        .then((result) => {
+            res.redirect("/alumni/event")
+        })
+})
+
+
 app.get("/admin/events/:event_name/final", async (req, res) => {
     let name = req.params.event_name;
     async function connectdb() {
@@ -602,6 +672,23 @@ app.get("/admin/events/:event_name/final", async (req, res) => {
     res.redirect("/admin/event")
 })
 
+app.get("/alumni/events/:event_name/final", async (req, res) => {
+    let name = req.params.event_name;
+    async function connectdb() {
+        await mongoose.connect("mongodb://localhost:27017/AlumniConnect")
+    }
+    connectdb();
+    const eventdb = mongoose.connection.collection('events');
+    // Delete the event
+    await eventdb.deleteOne({ title: name });
+    const collection = mongoose.connection.collection(name + "apply_form");
+    const data = await collection.drop();
+    console.log(data)
+    res.redirect("/alumni/event")
+  
+})
+
+
 app.post("/:event_name/submit-application", async (req, res) => {
     async function connectdb() {
         await mongoose.connect("mongodb://localhost:27017/AlumniConnect")
@@ -614,10 +701,8 @@ app.post("/:event_name/submit-application", async (req, res) => {
 
     let alert_val = false;
     const data = await collection.findOne({ "$or": [{ email: req.body.email }, { studentID: req.body.studentID }] })
-    if (data != null) {
-        alert_val = true;
-    }
-    else {
+  
+    
         //  Inserting the student application data into the collection
         const result = await collection.insertOne({
 
@@ -633,14 +718,13 @@ app.post("/:event_name/submit-application", async (req, res) => {
         });
         eventdb.find()
             .then((result) => {
-
-                res.render("Events.ejs", { result })
+                res.redirect("http://localhost:3000/user/event")
             })
             .catch((e) => {
                 res.send("<h1>404 Error<h1>")
             })
         console.log("success")
-    }
+    
 })
 
 app.get("/admin/delete/:event_name", (req, res) => {
@@ -649,6 +733,14 @@ app.get("/admin/delete/:event_name", (req, res) => {
         .then((result) => {
 
             res.render("delete_event.ejs", { result, name: name })
+        })
+
+})
+app.get("/alumni/delete/:event_name", (req, res) => {
+    let name = req.params.event_name
+    eventdb.find()
+        .then((result) => {
+            res.render("alumni_delete_event.ejs", { result, name: name })
         })
 
 })
@@ -681,6 +773,19 @@ app.get("/admin/event/:event_name/application", async (req, res) => {
     res.render("display_event_application.ejs", { application: data })
 })
 
+app.get("/alumni/event/:event_name/application", async (req, res) => {
+    async function connectdb() {
+        await mongoose.connect("mongodb://localhost:27017/AlumniConnect")
+    }
+    connectdb();
+    let event_name = req.params.event_name;
+    // Accessing the collection named after the event
+    const collection = mongoose.connection.collection(event_name + "apply_form");
+    const data = await collection.find().toArray()
+    console.log(data)
+    res.render("alumni_display_event_application.ejs", { application: data })
+})
+
 app.get("/admin/event/new", (req, res) => {
     let eventname = req.params.eventname;
     eventdb.findOne({ title: eventname })
@@ -693,6 +798,17 @@ app.get("/admin/event/new", (req, res) => {
         })
 })
 
+app.get("/alumni/event/new/add", (req, res) => {
+    let eventname = req.params.eventname;
+    eventdb.findOne({ title: eventname })
+        .then((result) => {
+            console.log(result)
+            res.render("alumni_event_new.ejs", { data: result })
+        })
+        .catch((e) => {
+            res.send("<h1>404 Error<h1>")
+        })
+})
 
 
 app.post('/admin/add-event', upload.single('image'), async (req, res) => {
@@ -713,6 +829,30 @@ app.post('/admin/add-event', upload.single('image'), async (req, res) => {
 
 
         res.redirect('/admin/event'); // Redirect to the admin event page after saving
+    } catch (error) {
+        console.error('Error adding event:', error);
+        res.status(500).send('An error occurred while adding the event.');
+    }
+});
+
+app.post('/alumni/add-event', upload.single('image'), async (req, res) => {
+    try {
+        eventdb.collection.insertOne({
+            image: req.file ? "../uploads/" + req.file.filename : null, //../uploads/image-1726080521523.png
+            title: req.body.title,
+            description: req.body.description,
+            date: req.body.date,
+            time: req.body.time,
+            location: req.body.location,
+            organizer: req.body.organizer,
+            eventType: req.body.eventType,
+            contact: req.body.contact,
+            website: req.body.website,
+            status: req.body.status,
+        });
+
+
+        res.redirect('/alumni/event'); // Redirect to the admin event page after saving
     } catch (error) {
         console.error('Error adding event:', error);
         res.status(500).send('An error occurred while adding the event.');

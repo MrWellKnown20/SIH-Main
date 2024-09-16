@@ -69,84 +69,29 @@
           </div>
         </section>
 
-        <!-- Event Cards Section -->
         <section class="container my-5">
+          <h2 class="text-center mb-5">Upcoming Events</h2>
           <div class="row g-4">
+            <% for(data of result){ %>
             <!-- Engineering Summit -->
-            <div class="col-md-6 col-lg-3">
+            <div style="margin-top: 40px;" class="col-md-4 col-lg-6">
               <div class="card h-100">
                 <img
-                  src="../events.jpg"
+                  src="<%= data.image %>"
                   class="card-img-top"
                   alt="Engineering Summit"
                 />
                 <div class="card-body">
-                  <h5 class="card-title">Engineering Summit</h5>
-                  <p class="card-text">Date: March 15, 2024</p>
-                  <p class="card-text">
-                    Explore cutting-edge innovations in engineering with
-                    industry leaders.
-                  </p>
-                  <a href="#" class="btn btn-primary">View Details</a>
+                  <h5 class="card-title"><%= data.title %></h5>
+                  <p class="card-text"><%= data.date%></p>
+                  <p class="card-text"><%= data.description %></p>
+                  <a href="/events/<%= data.title %>" class="btn btn-primary"
+                    >View Details</a
+                  >
                 </div>
               </div>
             </div>
-            <!-- Marketing Conference -->
-            <div class="col-md-6 col-lg-3">
-              <div class="card h-100">
-                <img
-                  src="../events.jpg"
-                  class="card-img-top"
-                  alt="Marketing Conference"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Marketing Conference</h5>
-                  <p class="card-text">Date: April 10, 2024</p>
-                  <p class="card-text">
-                    Join experts in digital marketing to learn the latest
-                    strategies.
-                  </p>
-                  <a href="#" class="btn btn-primary">View Details</a>
-                </div>
-              </div>
-            </div>
-            <!-- Cybersecurity Bootcamp -->
-            <div class="col-md-6 col-lg-3">
-              <div class="card h-100">
-                <img
-                  src="../events.jpg"
-                  class="card-img-top"
-                  alt="Cybersecurity Bootcamp"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Cybersecurity Bootcamp</h5>
-                  <p class="card-text">Date: May 5, 2024</p>
-                  <p class="card-text">
-                    Hands-on training on cybersecurity practices and threat
-                    management.
-                  </p>
-                  <a href="#" class="btn btn-primary">View Details</a>
-                </div>
-              </div>
-            </div>
-            <!-- AI Symposium -->
-            <div class="col-md-6 col-lg-3">
-              <div class="card h-100">
-                <img
-                  src="../events.jpg"
-                  class="card-img-top"
-                  alt="AI Symposium"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">AI Symposium</h5>
-                  <p class="card-text">Date: June 20, 2024</p>
-                  <p class="card-text">
-                    Delve into the latest AI research and its applications.
-                  </p>
-                  <a href="#" class="btn btn-primary">View Details</a>
-                </div>
-              </div>
-            </div>
+            <% } %>
           </div>
         </section>
       </main>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alumni Connect - Event Management</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/eventmanagement.css" />
+    <link rel="stylesheet" href="/adminDashboard.css" />
+    <link rel="stylesheet" href="/delete_event.css" />
+    <link rel="stylesheet" href="/sidebar.css" />
+    <link rel="stylesheet" href="/sidebarAlumni.css" />
+  </head>
+  <body>
+    <div id="pop_up_box">
+      <div class="pop_up_content">
+        <div class="pop_up_inner">
+          <h1 class="event_name"><%= name %></h1>
+          <div class="pop_up_buttons">
+            <a href="/alumni/event">
+              <button class="pop_up_button back_button">Back</button>
+            </a>
+            <form action="/alumni/events/<%= name %>/final">
+              <button class="pop_up_button delete_button">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-container">
+        <%- include("partials/AlumniSidebar.ejs") %>
+
+      <main class="main-content">
+        <header class="main-header">
+          <h1>Upcoming Events</h1>
+          <p>
+            Stay informed about future events with detailed information
+            including title, date, time, and location.
+          </p>
+          <form action="/admin/event/new" method="get">
+            <button class="new-event-btn">+ New</button>
+          </form>
+        </header>
+
+        <section class="events-grid">
+          <% for(data of result){ %>
+          <div class="event-card">
+            <img src="<%= data.image %>" alt="Event Image" />
+            <div class="event-info">
+              <h3><%= data.title %></h3>
+              <p>Date: <%= data.date %></p>
+              <p><%= data.time %> , <%= data.location %></p>
+              <a href="/alumni/event/<%= data.title %>/edit" class="edit-btn"
+                ><i class="fa-solid fa-pen-to-square"></i>Edit</a
+              >
+              <a href="/alumni/event/<%= data.title %>" class="edit-btn"
+                ><i class="fa-solid fa-street-view"></i>View details</a
+              >
+              <a
+                href="/admin/event/<%= data.title %>/application"
+                class="edit-btn"
+                ><i class="fa-solid fa-user"></i>See applications</a
+              >
+              <a href="/admin/delete/event" class="edit-btn"
+                ><i class="fa-solid fa-trash-can"></i>Delete</a
+              >
+            </div>
+          </div>
+          <% } %>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

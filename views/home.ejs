@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/home.css" />
     <link rel="stylesheet" href="/navbar.css" />
     <link rel="stylesheet" href="/footer.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   </head>
 
   <body>
@@ -27,9 +28,9 @@
     <header>
       <div class="hero">
         <div class="hero-content">
-          <h1>Welcome back!</h1>
-          <p>Reconnect, share, and grow with fellow alumni.</p>
-          <a href="/temp" class="cta-button">Join the Alumni Network</a>
+          <h1 data-aos="fade-down" >Welcome back!</h1>
+          <p data-aos="fade-down">Reconnect, share, and grow with fellow alumni.</p>
+          <a href="/temp" data-aos="fade-up" class="cta-button">Join the Alumni Network</a>
         </div>
       </div>
     </header>
@@ -37,7 +38,7 @@
     <main>
       <section class="events">
         <h2>Upcoming Events</h2>
-        <div class="event-cards">
+        <div data-aos="zoom-in" class="event-cards">
           <% i=0; %> <% for(event of event_data){ %> <%if(i==3) break; %>
           <div class="card">
             <img src="<%=event.image%>" alt="" />
@@ -51,9 +52,9 @@
       </section>
 
       <section class="featured-alumni">
-        <h2>Featured Alumni Who Landed Their Dream Jobs</h2>
+        <h2 >Featured Alumni Who Landed Their Dream Jobs</h2>
         <div class="alumni-cards">
-          <div class="card">
+          <div  class="card">
             <img
               src="../assets/images/alumni.jpg"
               alt="Emily Chen"
@@ -64,7 +65,7 @@
               leading tech startup.
             </p>
           </div>
-          <div class="card">
+          <div  class="card">
             <img
               src="../assets/images/JamesRodriguez.jpg"
               alt="James Rodriguez"
@@ -75,7 +76,7 @@
               director.
             </p>
           </div>
-          <div class="card">
+          <div  class="card">
             <img src="/mayapatel.jpg" alt="Maya Patel" />
             <h3>Maya Patel</h3>
             <p>
@@ -106,7 +107,7 @@
 
       <section class="jobs">
         <h2>Recent Jobs Posted</h2>
-        <div class="job-cards">
+        <div data-aos="zoom-out-up" class="job-cards">
           <% i=0; %> <% for(job of job_data){ %> <%if(i==3) break; %>
           <div class="card">
             <img src="<%= job.image %>" alt="" />
@@ -120,5 +121,11 @@
     </main>
 
     <%- include("partials/footer.ejs") %>
+    
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    
   </body>
 </html>

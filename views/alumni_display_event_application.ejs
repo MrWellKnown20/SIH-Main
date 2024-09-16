@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alumni Connect - Event Management</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/eventmanagement.css" />
+    <link rel="stylesheet" href="/adminDashboard.css" />
+    <link rel="stylesheet" href="/sidebar.css" />
+    <link rel="stylesheet" href="/sidebarAlumni.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+        <%- include("partials/AlumniSidebar.ejs") %>
+
+      <main class="main-content">
+        <header class="main-header">
+          <h1>All Application for event</h1>
+        </header>
+
+        <% if(application.length==0){ %>
+        <div
+          style="
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <h1 style="font-size: 40px; opacity: 0.7">No Applications</h1>
+        </div>
+        <% } %>
+        <section class="events-grid">
+          <% for(data of application){ %>
+          <div class="event-card">
+            <div class="event-info">
+              <h3><%= data.name %></h3>
+              <p><u>Email:</u> <%=data.email %></p>
+              <p><u>Student ID:</u><%= data.studentID %></p>
+              <p><u>Deparment:</u><%= data.department %></p>
+              <p><u>Year:</u><%= data.year %></p>
+              <p><u>Contact:</u><%= data.contact%></p>
+              <p><u>Student ID:</u><%= data.studentID %></p>
+              <p><u>Why he want to join :</u><%= data.motivation %></p>
+            </div>
+          </div>
+          <% } %>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

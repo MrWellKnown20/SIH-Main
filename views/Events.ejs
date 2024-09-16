@@ -71,7 +71,7 @@
       <div class="row g-4">
         <% for(data of result){ %>
         <!-- Engineering Summit -->
-        <div class="col-md-4 col-lg-6">
+        <div class="col-md-4 col-lg-4">
           <div class="card h-100">
             <img
               src="<%= data.image %>"
@@ -82,7 +82,7 @@
               <h5 class="card-title"><%= data.title %></h5>
               <p class="card-text"><%= data.date%></p>
               <p class="card-text"><%= data.description %></p>
-              <a href="/events/<%= data.title %>" class="btn btn-primary"
+              <a href="/login" class="btn btn-primary"
                 >View Details</a
               >
             </div>

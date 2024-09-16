@@ -32,6 +32,7 @@
         class="application-form"
         action="/<%= name %>/submit-application"
         method="POST"
+        onsubmit="return confirmSubmission()"
       >
         <h2>Student Details</h2>
 
@@ -78,5 +79,10 @@
     </main>
 
     <%- include("partials/footer.ejs") %>
+    <script>
+      function confirmSubmission() {
+        return confirm("Application Submited");
+      }
+    </script>
   </body>
 </html>

@@ -63,6 +63,12 @@
                       class="btn btn-outline-primary"
                       >Edit</a
                     >
+                    <a
+                    class="btn btn-outline-primary"
+                    href="/fetchApply/<%= job.title %>"
+                  >
+                    View Applicants
+                  </a>
                     <form
                       method="POST"
                       action="/admin/<%=job._id%>?_method=DELETE"
